@@ -15,6 +15,7 @@ while ($row = $result->fetch_assoc()) {
 $result->free();
 if ($personal_id == 0){
     $usertype = "Admin";
+    
 }
 if (isset($_POST['submit'])) {
   $input_username   = $_POST['exampleInputUsername1'];
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST[$fieldname])) {
       $exists = 1;
     }
-    
+
   }
   $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
   

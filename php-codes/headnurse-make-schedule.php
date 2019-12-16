@@ -210,11 +210,6 @@
                                 <div class="card container">
                                     <div class="form-group">
                                         <div class="form-label">Enter value</div>
-
-                                        <div class="col-sm-4 col-md-12">
-                                        <p class="">Boş geçilebilecek gün sayısı</p><input type="number" min="0" class="form-control col-6" placeholder="Value">
-                                        </div>
-
                                         <div class="col-sm-4 col-md-12" style="margin-bottom:10px; margin-top:10px;">
                                             <p>Hemşireye atanabilecek gece vardiyası sayısı</p>
                                             <p>Min day</p>
@@ -222,39 +217,7 @@
                                             <p  style="margin-top:10px;">Max day</p>
                                             <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
                                         </div>
-
-                                        <div class="col-sm-4 col-md-12">
-                                            <p>Ardışık çalışılabilecek maksimum gün sayısı</p>
-                                            <input type="number" min="0"  class="form-control col-6" placeholder="Value">
-                                        </div>
-
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="form-label">Koşulları seç</div>
-                                        <div class="custom-controls-stacked">
-                                            <div class="col-sm-4 col-md-12">
-
-                                            <label class="custom-control custom-checkbox ">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox1" value="option1">
-                                                <span class="custom-control-label">Hemşire aynı gün en fazla 1 vardiya da çalışabilir</span>
-                                            </label>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
-                                                <span class="custom-control-label">Her gün her vardiyada en az bir kıdemli hemşire olmalı</span>
-                                            </label>
-                                                <label class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
-                                                    <span class="custom-control-label">Gece vardiyasında çalışan hemşire ertesi gün gündüz vardiyasında çalışamaz</span>
-                                                </label>
-                                                <label class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="option2">
-                                                    <span class="custom-control-label">Ardışık olarak gece vardiyasında çalışılamaz</span>
-                                                </label>
-                                        </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                                 <div class="card container">
                                     <div class="form-group">
@@ -273,6 +236,10 @@
                                                     <li class="ui-state-default" id="order5">Her gün her vardiyada en az bir kıdemli hemşire olmalı</li>
                                                     <li class="ui-state-default" id="order6">Gece vardiyasında çalışan hemşire ertesi gün gündüz vardiyasında çalışamaz</li>
                                                     <li class="ui-state-default" id="order7">Ardışık olarak gece vardiyasında çalışılamaz</li>
+                                                    <li class="ui-state-default" id="order7">Ardışık olarak çalışılabilecek gün sayısı (Fix=4)</li>
+                                                    <li class="ui-state-default" id="order7">Max ardışık boş gün sayısı (Fix=3)</li>
+                                                    <li class="ui-state-default" id="order7">Hemşireye atanabilecek max gece vardiyası sayısı</li>
+                                                    <li class="ui-state-default" id="order7">Hemşireye atanabilecek min gece vardiyası sayısı</li>
                                                 </div>
                                             </div>
                                         </div>

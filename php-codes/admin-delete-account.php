@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST[$fieldname])) {
       $exists = 1;
     }
+    
   }
   $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
   

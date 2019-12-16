@@ -16,16 +16,21 @@ $result->free();
 if ($personal_id == 0){
     $usertype = "Admin";
 }
-if(isset($_POST['Submit']))
-  {
+if(isset($_POST['Submit'])){
   $oldpass=md5($_POST['oldpassword1']);
-  $username=$_SESSION['login'];
+  $input_username=($_POST['exampleInputUsername2']);
   $newpassword=md5($_POST['newpassword1']);
-  $sql=mysqli_query($con,"SELECT password FROM personal where password='$oldpass' && username='$username'");
-  $num=mysqli_fetch_array($sql);
+
+  $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+  if ($db->connect_errno > 0) {
+    die('Unable to connect to database [' . $db->connect_error . ']');
+  }
+
+  $result=mysqli_query($db,"SELECT password FROM personal where password='$oldpass' && username='$input_username'");
+  $num=mysqli_fetch_array($result);
   if($num>0)
   {
-  $con=mysqli_query($con,"update personal set password=' $newpassword' where username='$username'");
+  $db=mysqli_query($db,"UPDATE personal set password = '$newpassword' where username = '$input_username'");
   $_SESSION['msg1']="Password Changed Successfully !!";
   }
   else
@@ -108,18 +113,18 @@ if(isset($_POST['Submit']))
           <div class="col-lg order-lg-first">
             <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
               <li class="nav-item">
-                <a href="admin-index.html" class="nav-link "><i class="fe fe-home"></i> Home</a>
+                <a href="admin-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
               </li>
               <li class="nav-item">
-                <a href="admin-create-account.html" class="nav-link " data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="admin-delete-account.html" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
+                <a href="admin-create-account.php" class="nav-link " data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
               </li>
 
               <li class="nav-item">
-                <a href="admin-change-password.html" class="nav-link active" data-toggle="dropdown"><i class="fe fe-box"></i> Change Password</a>
+                <a href="admin-delete-account.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="admin-change-password.php" class="nav-link active" data-toggle="dropdown"><i class="fe fe-box"></i> Change Password</a>
               </li>
 
             </ul>
@@ -140,17 +145,16 @@ if(isset($_POST['Submit']))
                 <div class="card-title">Change password</div>
                 <div class="form-group">
                   <label class="form-label" for="exampleInputEmail1">Username</label>
-                  <input type="username" class="form-control" id="exampleInputUsername2" aria-describedby="emailHelp" placeholder="Enter Username">
+                  <input type="username" class="form-control" name="exampleInputUsername2" id="exampleInputUsername2" placeholder="Enter Username">
 
                   <label class="form-label" for="exampleInputEmail1">Old password</label>
-                  <input type="password" class="form-control" id="oldpassword1" placeholder="Enter Old Password">
+                  <input type="password" class="form-control" name="oldpassword1" id="oldpassword1" placeholder="Enter Old Password">
 
                   <label class="form-label" for="exampleInputEmail1">New password</label>
-                  <input type="password" class="form-control" id="newpassword1" placeholder="Enter New Password">
+                  <input type="password" class="form-control" name="newpassword1" id="newpassword1" placeholder="Enter New Password">
                 </div>
                 <div class="form-footer">
-                <td><a href="main-login.php">Back to login Page </a></td>
-                  <button type="submit" name ="Submit" class="btn btn-primary btn-block">Change password</button>
+                  <button type="submit" id="Submit" name="Submit" class="btn btn-primary btn-block">Change password</button>
                 </div>
               </div>
             </form>

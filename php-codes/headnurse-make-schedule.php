@@ -246,7 +246,6 @@ if ($personal_id == 4){
                                     <div class="form-group">
                                         <div class="custom-controls-stacked">
                                             <div class="col-sm-4 col-md-12">
-
                                                 <div id="sortable">
                                                     <li class="ui-state-default" name="1" id="order1">Ardışık çalışılabilecek maksimum gün sayısı</li>
                                                     <li class="ui-state-default" name="2" id="order2">Hemşireye atanabilecek gece vardiyası sayısı</li>

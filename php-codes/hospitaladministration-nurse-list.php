@@ -13,11 +13,8 @@ while ($row = $result->fetch_assoc()) {
   $email        = $row['email'];
 }
 $result->free();
-if ($personal_id == 2){
-    $usertype = "Nurse";
-}
-else{
-    $usertype = "Senior Nurse";
+if ($personal_id == 1){
+    $usertype = "Hospital Manager";
 }
 ?>
 <!doctype html>
@@ -37,7 +34,7 @@ else{
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
     <!-- Generated: 2018-04-16 09:29:05 +0200 -->
-    <title>Nurse My Info Page - Nurse Scheduling System</title>
+    <title>Hospital Administration Nurse List page - Nurse Scheduling System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="../assets/js/require.min.js"></script>
@@ -64,7 +61,7 @@ else{
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="nurse-availability.html">
+                    <a class="header-brand" href="./hospitaladministration-index.html">
                         <img src="../images/logo.jpeg" class="header-brand-img" alt="tabler logo">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
@@ -74,7 +71,7 @@ else{
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
 
                     <span class="ml-2 d-none d-lg-block">
-                      <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
+                    <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
                       <small class="text-muted d-block mt-1"><?php echo $usertype  ?></small>
                     </span>
                             </a>
@@ -92,16 +89,18 @@ else{
 
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                            <li class="nav-item dropdown">
-                                <a href="./nurse-show-schedule.php" class="nav-link "><i class="fe fe-list"></i> Show Schedule</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>availability</a>
+                        <li class="nav-item">
+                                <a href="./hospitaladministration-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="./nurse-info.php" class="nav-link active "><i class="fe fe-check-circle"></i> My Info</a>
+                                <a href="hospitaladministration-nurse-list.php" class="nav-link"><i class="fe fe-users"></i> Nurse List</a>
                             </li>
-
+                            <li class="nav-item dropdown">
+                                <a href="hospitaladministration-show-schedule.php" class="nav-link"><i class="fe fe-list"></i> Show Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="hospitaladministration-report.php" class="nav-link"><i class="fe fe-check-square"></i> Report</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -109,16 +108,48 @@ else{
         </div>
         <div class="my-3 my-md-5">
             <div class="container">
-                <div class="col-lg-12">
+                <div class="col-lg-6" style="float:left;">
+
                     <div class="card card-aside">
+
                         <div class="card-body d-flex flex-column">
-                            <!-- it will be data from database-->
-                <p>Çalışılan gün:</p>
-                <p>Çalışılan saat:</p>
-                <p>Ek mesai:</p>
-                <p>Yıllık izin kullanılan gün sayısı:</p>
+
+
+                            <h6 style="margin-top: 20px; margin-bottom: 50px;">Nurse List</h6>
+                            <table class="tg">
+                                <tbody><tr>
+                                    <th class="tg-c3ow">Nurse Name</th>
+                                    <th class="tg-baqh">Info</th>
+                                    <th class="tg-baqh">asdads</th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Tuğkan</td>
+                                    <td class="tg-baqh">0</td>
+                                    <td class="tg-baqh">adsads</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">1</td>
+                                    <td class="tg-baqh">asdas</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İlayda</td>
+                                    <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh">asdasd</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İdris</td>
+                                    <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh">adsad</td>
+                                </tr>
+                                </tbody></table>
+
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>

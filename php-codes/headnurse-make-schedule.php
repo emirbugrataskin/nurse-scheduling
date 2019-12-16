@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+include('make-schedule.js');
 if ($db->connect_errno > 0) {
   die('Unable to connect to database [' . $db->connect_error . ']');
 }
@@ -218,11 +219,8 @@ if ($personal_id == 4){
                                     <button type="button" class="btn btn-primary" id="saveLeft" onclick="disbtnLeft();">Save</button>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
                     <!-- Right side  -->
                     <div class="col-lg-6" id="disableRight">
                         <div class="card card-aside">
@@ -244,29 +242,27 @@ if ($personal_id == 4){
                                 <div class="card container">
                                     <div class="form-group">
                                         <div class="form-label">Seçtiğin koşulları önceliğe göre sırala (sürükle bırak)</div>
-                                        <p>seçmediysen bırak dağınık kalsın</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-controls-stacked">
                                             <div class="col-sm-4 col-md-12">
 
                                                 <div id="sortable">
-                                                    <li class="ui-state-default" id="order1">Ardışık çalışılabilecek maksimum gün sayısı</li>
-                                                    <li class="ui-state-default" id="order2">Hemşireye atanabilecek gece vardiyası sayısı</li>
-                                                    <li class="ui-state-default" id="order3">Boş geçilebilecek gün sayısı</li>
-                                                    <li class="ui-state-default" id="order4">Hemşire aynı gün en fazla 1 vardiya da çalışabilir</li>
-                                                    <li class="ui-state-default" id="order5">Her gün her vardiyada en az bir kıdemli hemşire olmalı</li>
-                                                    <li class="ui-state-default" id="order6">Gece vardiyasında çalışan hemşire ertesi gün gündüz vardiyasında çalışamaz</li>
-                                                    <li class="ui-state-default" id="order7">Ardışık olarak gece vardiyasında çalışılamaz</li>
-                                                    <li class="ui-state-default" id="order7">Ardışık olarak çalışılabilecek gün sayısı (Fix=4)</li>
-                                                    <li class="ui-state-default" id="order7">Max ardışık boş gün sayısı (Fix=3)</li>
-                                                    <li class="ui-state-default" id="order7">Hemşireye atanabilecek max gece vardiyası sayısı</li>
-                                                    <li class="ui-state-default" id="order7">Hemşireye atanabilecek min gece vardiyası sayısı</li>
+                                                    <li class="ui-state-default" name="1" id="order1">Ardışık çalışılabilecek maksimum gün sayısı</li>
+                                                    <li class="ui-state-default" name="2" id="order2">Hemşireye atanabilecek gece vardiyası sayısı</li>
+                                                    <li class="ui-state-default" name="3" id="order3">Boş geçilebilecek gün sayısı</li>
+                                                    <li class="ui-state-default" name="4" id="order4">Hemşire aynı gün en fazla 1 vardiya da çalışabilir</li>
+                                                    <li class="ui-state-default" name="5" id="order5">Her gün her vardiyada en az bir kıdemli hemşire olmalı</li>
+                                                    <li class="ui-state-default" name="6" id="order6">Gece vardiyasında çalışan hemşire ertesi gün gündüz vardiyasında çalışamaz</li>
+                                                    <li class="ui-state-default" name="7" id="order7">Ardışık olarak gece vardiyasında çalışılamaz</li>
+                                                    <li class="ui-state-default" name="8" id="order8">Ardışık olarak çalışılabilecek gün sayısı (Fix=4)</li>
+                                                    <li class="ui-state-default" name="9" id="order9">Max ardışık boş gün sayısı (Fix=3)</li>
+                                                    <li class="ui-state-default" name="10" id="order10">Hemşireye atanabilecek max gece vardiyası sayısı</li>
+                                                    <li class="ui-state-default" name="11" id="order11">Hemşireye atanabilecek min gece vardiyası sayısı</li>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="text-right">
                                     <button type="button" class="btn btn-primary" id="saveRight" onclick="disbtnRight();">Save</button>

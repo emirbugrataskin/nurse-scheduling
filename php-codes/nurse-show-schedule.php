@@ -23,6 +23,15 @@ else{
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
+    <style type="text/css">
+        .tg th {border: 1px solid rgba(0, 40, 100, 0.12)!important}
+        .tg td {border: 1px solid rgba(0, 40, 100, 0.12)!important}
+        .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+        .tg td{font-family:Arial, sans-serif;font-size:18px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-baqh{text-align:center;vertical-align:top}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -37,7 +46,7 @@ else{
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
     <!-- Generated: 2018-04-16 09:29:05 +0200 -->
-    <title>Nurse My Info Page - Nurse Scheduling System</title>
+    <title>Nurse Show Scheduling Page - Nurse Scheduling System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="../assets/js/require.min.js"></script>
@@ -61,6 +70,7 @@ else{
 <body class="">
 <div class="page">
     <div class="page-main">
+        <!-- header-->
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
@@ -74,7 +84,7 @@ else{
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
 
                     <span class="ml-2 d-none d-lg-block">
-                      <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
+                    <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
                       <small class="text-muted d-block mt-1"><?php echo $usertype  ?></small>
                     </span>
                             </a>
@@ -93,13 +103,13 @@ else{
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item dropdown">
-                                <a href="./nurse-show-schedule.php" class="nav-link "><i class="fe fe-list"></i> Show Schedule</a>
+                                <a href="./nurse-show-schedule.php" class="nav-link active"><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>availability</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="./nurse-info.php" class="nav-link active "><i class="fe fe-check-circle"></i> My Info</a>
+                                <a href="./nurse-info.php" class="nav-link "><i class="fe fe-check-circle"></i> My Info</a>
                             </li>
 
                         </ul>
@@ -107,16 +117,77 @@ else{
                 </div>
             </div>
         </div>
+        <!-- body-->
         <div class="my-3 my-md-5">
             <div class="container">
                 <div class="col-lg-12">
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
-                            <!-- it will be data from database-->
-                <p>Çalışılan gün:</p>
-                <p>Çalışılan saat:</p>
-                <p>Ek mesai:</p>
-                <p>Yıllık izin kullanılan gün sayısı:</p>
+
+                            <h6>Schedule</h6>
+                            <!-- Table of min. hours  -->
+                            <table class="tg">
+                                <tr>
+                                    <th class="tg-c3ow">Days/Nurse Name</th>
+                                    <th class="tg-baqh">Tuğkan</th>
+                                    <th class="tg-baqh">Emir</th>
+                                    <th class="tg-baqh">Yıldırımhan</th>
+                                    <th class="tg-baqh">İdris</th>
+                                    <th class="tg-baqh">İlayda</th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">1</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">4</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td></tr>
+                                <tr>
+                                    <td class="tg-baqh">5</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td></tr>
+                                <tr>
+                                    <td class="tg-baqh">6</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td></tr>
+                                <tr>
+                                    <td class="tg-baqh">7</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">Y.İ</td>
+                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">Y.İ</td></tr>
+                            </table>
                         </div>
                     </div>
                 </div>

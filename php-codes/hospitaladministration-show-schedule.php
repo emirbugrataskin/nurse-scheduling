@@ -20,6 +20,15 @@ if ($personal_id == 1){
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
+    <style type="text/css">
+        .tg th {border: 1px solid rgba(0, 40, 100, 0.12)!important}
+        .tg td {border: 1px solid rgba(0, 40, 100, 0.12)!important}
+        .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+        .tg td{font-family:Arial, sans-serif;font-size:18px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-baqh{text-align:center;vertical-align:top}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -34,7 +43,7 @@ if ($personal_id == 1){
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
     <!-- Generated: 2018-04-16 09:29:05 +0200 -->
-    <title>Hospital Administration Home page - Nurse Scheduling System</title>
+    <title>Hospital Administration Show Schedule page - Nurse Scheduling System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="../assets/js/require.min.js"></script>
@@ -89,7 +98,7 @@ if ($personal_id == 1){
 
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                            <li class="nav-item">
+                        <li class="nav-item">
                                 <a href="./hospitaladministration-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item dropdown">
@@ -107,6 +116,79 @@ if ($personal_id == 1){
             </div>
         </div>
         <div class="my-3 my-md-5">
+            <div class="container">
+            <div class="col-lg-12">
+                <div class="card card-aside">
+                    <div class="card-body d-flex flex-column">
+
+                        <h6>Schedule</h6>
+                        <!-- Table of min. hours  -->
+                        <table class="tg">
+                            <tr>
+                                <th class="tg-c3ow">Days/Nurse Name</th>
+                                <th class="tg-baqh">Tuğkan</th>
+                                <th class="tg-baqh">Emir</th>
+                                <th class="tg-baqh">Yıldırımhan</th>
+                                <th class="tg-baqh">İdris</th>
+                                <th class="tg-baqh">İlayda</th>
+                            </tr>
+                            <tr>
+                                <td class="tg-baqh">1</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-baqh">2</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-baqh">3</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td>
+                            </tr>
+                            <tr>
+                                <td class="tg-baqh">4</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td></tr>
+                            <tr>
+                                <td class="tg-baqh">5</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td></tr>
+                            <tr>
+                                <td class="tg-baqh">6</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td></tr>
+                            <tr>
+                                <td class="tg-baqh">7</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Öğle</td>
+                                <td class="tg-baqh">Y.İ</td>
+                                <td class="tg-baqh">Sabah</td>
+                                <td class="tg-baqh">Y.İ</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
     <footer class="footer">

@@ -1,3 +1,22 @@
+<?php
+include('session.php');
+if ($db->connect_errno > 0) {
+  die('Unable to connect to database [' . $db->connect_error . ']');
+}
+$result = $db->query("select * from personal where username='$_SESSION[login_user]'");
+while ($row = $result->fetch_assoc()) {
+  $name         = $row['name'];
+  $surname      = $row['surname'];
+  $username     = $row['username'];
+  $user_id      = $row['user_id'];
+  $personal_id  = $row['personal_id'];
+  $email        = $row['email'];
+}
+$result->free();
+if ($personal_id == 4){
+    $usertype = "Head Nurse";
+}
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -63,8 +82,8 @@
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
 
                     <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">Jessica Whitecloud</span>
-                      <small class="text-muted d-block mt-1">Head Nurse</small>
+                    <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
+                    <small class="text-muted d-block mt-1"><?php echo $usertype  ?></small>
                     </span>
                             </a>
                         </div>
@@ -81,15 +100,18 @@
 
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                            <li class="nav-item">
-                                <a href="headnurse-index.html" class="nav-link "><i class="fe fe-home"></i> Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="headnurse-make-schedule.html" class="nav-link active"><i class="fe fe-calendar"></i> Make Schedule</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="headnurse-show-schedule.html" class="nav-link"><i class="fe fe-calendar"></i> Show Schedule</a>
-                            </li>
+                        <li class="nav-item">
+                    <a href="headnurse-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="headnurse-make-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Make Schedule</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="headnurse-show-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Show Schedule</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a href="headnurse-availability.php" class="nav-link"><i class="fe fe-calendar"></i> Headnurse Availability</a>
+                  </li>
                         </ul>
                     </div>
                 </div>
@@ -107,7 +129,7 @@
                             <div class="card-body d-flex flex-column">
                                 <!-- Period  -->
                             <div class="form-group">
-                                <div class="form-label">Select Period(day)</div>
+                                <div class="form-label">Select Period(day)  Vardiyalar(Sabah 08:00-16:00 | Gece 16:00-08:00)</div>
                                 <div class="custom-controls-stacked">
                                     <label class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" name="example-inline-radios" value="option1" checked="">
@@ -304,87 +326,6 @@
                         </div>
 
                     </div>
-
-                    <!-- Mid side (Table) shift  -->
-                    <div class="col-lg-12" id="disableShiftTable">
-                        <div class="card card-aside">
-                            <div class="card-body d-flex flex-column">
-
-                                <p>Gün ve vardiyaya atanacak hemşireler</p>
-                                    <!-- Table of min. hours  -->
-                                <table class="tg">
-                                    <tr>
-                                        <th class="tg-c3ow">Days/Shift</th>
-                                        <th class="tg-baqh">Shift 1</th>
-                                        <th class="tg-baqh">Shift 2</th>
-                                        <th class="tg-baqh">Shift 3</th>
-                                        <th class="tg-baqh">Shift 4</th>
-                                        <th class="tg-baqh">Shift 5</th>
-                                    </tr>
-                                    <?php
-                                $i1 = 0; $day = 1; $deger = 0;
-                                while($day<8){
-                                    echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
-                                        while($i1<5)
-                                        {  
-                                            $i2 = $i1+1;
-                                            echo '<td class="tg-baqh">  <select name="minNurse">
-                                            <option value="0">Nurse name 1</option>
-                                            <option value="0">Nurse name 2</option>
-                                            <option value="0">Nurse name 3</option>
-                                            <option value="0">Nurse name 4</option>
-                                            <option value="0">Nurse name 5</option>
-                                        </select> </td>';
-                                            $i1++;
-                                        }
-                                        $i1=0;
-                                        $day++;
-                                    } 
-                                ?>
-                                </table>
-                                <div class="text-right">
-                                    <button type="button" class="btn btn-primary" id="disbtnShiftTable" onclick="disbtnShiftTable();">Save Shift</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mid side (Table) non-shift  -->
-                    <div class="col-lg-12" id="disableNonShiftTable">
-                        <div class="card card-aside">
-                            <div class="card-body d-flex flex-column">
-
-                                <p>Gün ve vardiyaya atanmayacak hemşireler</p>
-                                <!-- Table of min. hours  -->
-                                <table class="tg">
-                                <?php
-                                $i1 = 0; $day = 1; $deger = 0;
-                                while($day<8){
-                                    echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
-                                        while($i1<5)
-                                        {  
-                                            $i2 = $i1+1;
-                                            echo '<td class="tg-baqh">  <select name="minNurse">
-                                            <option value="0">Nurse name 1</option>
-                                            <option value="0">Nurse name 2</option>
-                                            <option value="0">Nurse name 3</option>
-                                            <option value="0">Nurse name 4</option>
-                                            <option value="0">Nurse name 5</option>
-                                        </select> </td>';
-                                            $i1++;
-                                        }
-                                        $i1=0;
-                                        $day++;
-                                    } 
-                                ?>
-                                </table>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-primary" id="saveNonShift" onclick="disbtnNonShiftTable();">Save non-Shift</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Mid side (Table) annual permit  -->
                     <div class="col-lg-12" id="disableAnnualPermit">
                         <div class="card card-aside">

@@ -1,3 +1,64 @@
+<?php
+include('session.php');
+if ($db->connect_errno > 0) {
+  die('Unable to connect to database [' . $db->connect_error . ']');
+}
+$result = $db->query("select * from personal where username='$_SESSION[login_user]'");
+while ($row = $result->fetch_assoc()) {
+  $name         = $row['name'];
+  $surname      = $row['surname'];
+  $username     = $row['username'];
+  $user_id      = $row['user_id'];
+  $personal_id  = $row['personal_id'];
+  $email        = $row['email'];
+}
+$result->free();
+if ($personal_id == 0){
+    $usertype = "Admin";
+}
+if (isset($_POST['signup'])) {
+  $input_username   = $_POST['inputUsername'];
+  $password   = md5($_POST['inputPassword']);
+  $fname      = $_POST['firstName'];
+  $lname      = $_POST['lastName'];
+  $email      = $_POST['inputEmail'];
+  $user_id      = $_POST['userId'];
+  $input_personal_id      = $_POST['personalID'];
+  $exists     = 0;
+  $error      = '';
+  $fields = array('inputUsername', 'inputPassword', 'firstName', 'lastName');
+  foreach ($fields as $fieldname) { //Loop trough each field
+    if (empty($_POST[$fieldname])) {
+      $exists = 1;
+    }
+  }
+  $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+  if ($db->connect_errno > 0) {
+    die('Unable to connect to database [' . $db->connect_error . ']');
+  }
+  $result = $db->query("SELECT username from user WHERE username = '{$username}' LIMIT 1");
+  if ($result->num_rows == 1)
+    $exists = 3;
+  if ($exists == 1) {
+    $error = "Fields can not be empty!";
+  }
+  if ($exists == 3) {
+    $error = "Username already exists!";
+  }
+  if ($exists == 0) {
+    $sql = "INSERT  INTO `personal` (`name`, `surname`, `username`, `password`, `user_id`, `personal_id`, `email`) 
+              VALUES ('{$fname}', '{$lname}', '{$input_username}', '{$password}', '{$user_id}', '{$input_personal_id}', '{$email}')";
+    if ($db->query($sql)) {
+      $_SESSION['message'] = 'Registered Successfully!';
+      header("location: admin-index.php");
+    } else {
+      echo "<p>MySQL error no {$db->errno} : {$db->error}</p>";
+      exit();
+    }
+  }
+  $db->close();
+}
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -52,8 +113,8 @@
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
 
                     <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">Tuğkan Boz</span>
-                      <small class="text-muted d-block mt-1">Administrator</small>
+                    <a href="logout.php"><span class="text-default"><?php echo $name . " " . $surname ?></span> </a>
+                    <small class="text-muted d-block mt-1"><?php echo $usertype  ?></small>
                     </span>
                             </a>
                         </div>
@@ -72,18 +133,18 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                                <a href="admin-index.html" class="nav-link "><i class="fe fe-home"></i> Home</a>
+                                <a href="admin-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="admin-create-account.html" class="nav-link active" data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="admin-delete-account.html" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
+                                <a href="admin-create-account.php" class="nav-link active" data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="admin-change-password.html" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Change Password</a>
+                                <a href="admin-delete-account.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="admin-change-password.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Change Password</a>
                             </li>
 
                         </ul>
@@ -98,42 +159,41 @@
                 </div>
                 <form class="card" action="" method="post">
                     <div class="card-body p-6">
-                        <div class="card-title">Create new account</div>
-                        <label class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" />
-                            <span class="custom-control-label">Kıdemli Nurse</span>
-                        </label>
+                        <div class="card-title">Create New  Account</div>
                         <div class="form-group">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter name">
+                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter name">
                         </div>
-
                         <div class="form-group">
                             <label class="form-label">Surname</label>
-                            <input type="text" class="form-control" placeholder="Enter surname">
+                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter name">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Email address</label>
-                            <input type="email" class="form-control" placeholder="Enter email">
+                            <label class="form-label">Username</label>
+                            <input type="username" class="form-control" name="inputUsername" id="inputUsername" placeholder="Enter username">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control"  name="inputPassword" id="inputPassword" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" />
-                                <span class="custom-control-label">Agree the <a href="404.html">terms and policy</a></span>
-                            </label>
+                            <label class="form-label">Personal Type</label>
+                            <select name="personalID">
+                            <option value="1">Hospital Administration</option>
+                            <option value="2">Nurse</option>
+                            <option value="3">Senior Nurse</option>
+                            <option value="4">Head Nurse</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">E-Mail Adress</label>
+                            <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="E-Mail">
                         </div>
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-primary btn-block">Create new account</button>
+                            <button type="submit" name ="signup" id="signup" class="btn btn-primary btn-block">Create New Account</button>
                         </div>
                     </div>
                 </form>
-                <div class="text-center text-muted">
-                    Already have account? <a href="main-login.html">Sign in</a>
-                </div>
             </div>
         </div>
 

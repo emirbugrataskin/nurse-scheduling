@@ -92,11 +92,11 @@ if ($personal_id == 0){
                     <a href="admin-index.html" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                   </li>
                   <li class="nav-item">
-                    <a href="admin-create-account.html" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
+                    <a href="admin-create-account.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
                   </li>
 
                   <li class="nav-item red">
-                    <a href="admin-delete-account.html" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
+                    <a href="admin-delete-account.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Delete Account</a>
                   </li>
 
                   <li class="nav-item">

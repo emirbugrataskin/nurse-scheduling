@@ -89,7 +89,7 @@ if ($personal_id == 0){
               <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                   <li class="nav-item">
-                    <a href="admin-index.html" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                    <a href="admin-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                   </li>
                   <li class="nav-item">
                     <a href="admin-create-account.php" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>

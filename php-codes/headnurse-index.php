@@ -61,7 +61,7 @@ if ($personal_id == 4){
         <div class="header py-4">
           <div class="container">
             <div class="d-flex">
-              <a class="header-brand" href="./headnurse-index.html">
+              <a class="header-brand" href="./headnurse-index.php">
                 <img src="../images/logo.jpeg" class="header-brand-img" alt="tabler logo">
               </a>
               <div class="d-flex order-lg-2 ml-auto">

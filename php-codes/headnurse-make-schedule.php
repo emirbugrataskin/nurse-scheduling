@@ -1,6 +1,5 @@
 <?php
 include('session.php');
-include('make-schedule.js');
 if ($db->connect_errno > 0) {
   die('Unable to connect to database [' . $db->connect_error . ']');
 }
@@ -17,6 +16,8 @@ $result->free();
 if ($personal_id == 4){
     $usertype = "Head Nurse";
 }
+
+
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
@@ -154,7 +155,7 @@ if ($personal_id == 4){
                                 <div class="card">
 
                                     <div class="card-body">
-                                        <div class="form-label">Hemşire cart curt</div>
+                                        <div class="form-label">Hemşire Listesi</div>
                                         <div class="table-responsive">
                                             <table class="table mb-0">
                                                 <thead>
@@ -164,52 +165,42 @@ if ($personal_id == 4){
                                                     <th>Max saat</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody><tr>
+                                                <tbody>
+                                                    <tr>
                                                     <td class="pl-0">
-                                                        </select><input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="Tuğkan" disabled="">
+                                                    <?php
+                                                        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                                        if ($db->connect_errno > 0) {
+                                                          die('Unable to connect to database [' . $db->connect_error . ']');
+                                                        }
+                                                        $i=1;
+                                                        $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                                        $row_cnt = $result2->num_rows;
+                                                        $personal_id  = $row['personal_id'];
+                                
+                                                        while($i<=$row_cnt){
+                                                        $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
+                                                        $hems_isim;
+                                                        $hems_soyisim;
 
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="number" min="0"></td>
-
-                                                    <td class="pr-0">
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pl-0">
-                                                        <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="nurse 2" disabled="">
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                    </td>
-
-                                                    <td class="pr-0">
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pl-0">
-                                                        <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="nurse 3" disabled="">
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-
-                                                    <td class="pr-0">
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="pl-0">
-                                                        <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value="nurse 4" disabled="">
-                                                    </td>
-                                                    <td>
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                    </td>
-
-                                                    <td class="pr-0">
-                                                        <input class="form-control" type="number" min="0"></td>                                                    </td>
-                                                    </td>
-                                                </tr>
+                                                            while($row = mysqli_fetch_object($result)){
+                                                                $hems_isim = $row->name;
+                                                                $hems_soyisim = $row->surname; 
+                                                            }
+                                                            echo 
+                                                            '<tr>
+                                                            <td class="pl-0">
+                                                            </select><input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled.." value=" '.$hems_isim.' '.$hems_soyisim.'  " disabled="">
+                                                            </td>
+                                                            <td>
+                                                            <input class="form-control" type="number" min="0"></td>
+                                                            <td class="pr-0">
+                                                            <input class="form-control" type="number" min="0"></td>  
+                                                            </td>
+                                                            </tr>';
+                                                            $i++;
+                                                      }   
+                                                    ?>
                                                 </tbody></table>
                                         </div>
                                     </div>

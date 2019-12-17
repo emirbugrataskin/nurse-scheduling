@@ -50,7 +50,7 @@ if (isset($_POST['signup'])) {
               VALUES ('{$fname}', '{$lname}', '{$input_username}', '{$password}', '{$user_id}', '{$input_personal_id}', '{$email}')";
     if ($db->query($sql)) {
       $_SESSION['message'] = 'Registered Successfully!';
-      header("location: admin-index.php");
+      header("location: admin-create-account.php");
     } else {
       echo "<p>MySQL error no {$db->errno} : {$db->error}</p>";
       exit();

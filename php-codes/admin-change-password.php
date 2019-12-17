@@ -83,7 +83,7 @@ if(isset($_POST['Submit'])){
     <div class="header py-4">
       <div class="container">
         <div class="d-flex">
-          <a class="header-brand" href="./admin-index.php">
+          <a class="header-brand" href="./admin-create-account.php">
             <img src="../images/logo.jpeg" class="header-brand-img" alt="tabler logo">
           </a>
           <div class="d-flex order-lg-2 ml-auto">
@@ -112,9 +112,6 @@ if(isset($_POST['Submit'])){
 
           <div class="col-lg order-lg-first">
             <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-              <li class="nav-item">
-                <a href="admin-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
-              </li>
               <li class="nav-item">
                 <a href="admin-create-account.php" class="nav-link " data-toggle="dropdown"><i class="fe fe-box"></i> Create New Account</a>
               </li>

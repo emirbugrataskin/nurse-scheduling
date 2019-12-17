@@ -42,7 +42,7 @@
       include('login.php');
         if (isset($_SESSION['login_user'])&& $_SESSION['personal_id']== 0) {
           
-          header("location: admin-index.php");
+          header("location: admin-create-account.php");
         }
         elseif (isset($_SESSION['login_user'])&& $_SESSION['personal_id']== 1) {
           

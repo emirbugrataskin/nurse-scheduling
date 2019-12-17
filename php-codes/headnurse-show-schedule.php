@@ -132,11 +132,30 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Days/Nurse Name</th>
-                                    <th class="tg-baqh">Tuğkan</th>
-                                    <th class="tg-baqh">Emir</th>
-                                    <th class="tg-baqh">Yıldırımhan</th>
-                                    <th class="tg-baqh">İdris</th>
-                                    <th class="tg-baqh">İlayda</th>
+                                    <?php
+                                        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                        if ($db->connect_errno > 0) {
+                                             die('Unable to connect to database [' . $db->connect_error . ']');
+                                        }
+
+                                            $i=1;
+                                            $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                            $row_cnt = $result2->num_rows;
+                                            $personal_id  = $row['personal_id'];
+                                
+                                            while($i<=$row_cnt){
+                                                $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
+                                                $hems_isim;
+                                                $hems_soyisim;
+
+                                                while($row = mysqli_fetch_object($result)){
+                                                    $hems_isim = $row->name;
+                                                    $hems_soyisim = $row->surname; 
+                                                }
+                                                echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                $i++;
+                                            }   
+                                    ?>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">1</td>
@@ -379,20 +398,6 @@ if ($personal_id == 4){
                     </div>
                 </div>
                 <!-- after edit. show some compare-->
-                <div class="col-lg-6" style="float:left;">
-
-                    <div class="card card-aside">
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h6>Belki data gelir</h6>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
                 <!-- stacked chart-->
                 <div class="col-lg-12">
                     <div class="card card-aside">

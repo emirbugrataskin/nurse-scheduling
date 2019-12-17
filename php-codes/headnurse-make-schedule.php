@@ -134,20 +134,21 @@ if ($personal_id == 4){
                                 <div class="form-label">Select Period(day)  Vardiyalar(Sabah 08:00-16:00 | Gece 16:00-08:00)</div>
                                 <div class="custom-controls-stacked">
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="option1" checked="">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="7">
                                         <span class="custom-control-label">7</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="option2">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="14">
                                         <span class="custom-control-label">14</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="option3">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="21">
                                         <span class="custom-control-label">21</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="option3">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="28">
                                         <span class="custom-control-label">28</span>
+                                        
                                     </label>
                                 </div>
                             </div>
@@ -318,21 +319,39 @@ if ($personal_id == 4){
                             <div class="card-body d-flex flex-column">
 
                                 <p>Annual Permit Settings 0 or 1</p>
-                                <!-- Table of min. hours  -->
                                 <table class="tg">
                                     <tr>
                                         <th class="tg-c3ow">Days/Nurse Name</th>
-                                        <th class="tg-baqh">Nurse name 1</th>
-                                        <th class="tg-baqh">Nurse name 2</th>
-                                        <th class="tg-baqh">Nurse name 3</th>
-                                        <th class="tg-baqh">Nurse name 4</th>
-                                        <th class="tg-baqh">Nurse name 5</th>
+                                        <?php
+                                        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                        if ($db->connect_errno > 0) {
+                                             die('Unable to connect to database [' . $db->connect_error . ']');
+                                        }
+
+                                            $i=1;
+                                            $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                            $row_cnt = $result2->num_rows;
+                                            $personal_id  = $row['personal_id'];
+                                
+                                            while($i<=$row_cnt){
+                                                $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
+                                                $hems_isim;
+                                                $hems_soyisim;
+
+                                                while($row = mysqli_fetch_object($result)){
+                                                    $hems_isim = $row->name;
+                                                    $hems_soyisim = $row->surname; 
+                                                }
+                                                echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                $i++;
+                                            }   
+                                    ?>
                                     </tr>
                                     <?php
                                 $i1 = 0; $day = 1; $deger = 0;
                                 while($day<8){
                                     echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
-                                        while($i1<5)
+                                        while($i1<$row_cnt)
                                         {  
                                             $i2 = $i1+1;
                                             echo '<td class="tg-baqh"><select name="AnnualPermit">

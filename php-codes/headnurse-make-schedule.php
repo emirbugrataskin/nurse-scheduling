@@ -16,8 +16,6 @@ $result->free();
 if ($personal_id == 4){
     $usertype = "Head Nurse";
 }
-
-
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
@@ -130,28 +128,32 @@ if ($personal_id == 4){
                         <div class="card card-aside">
                             <div class="card-body d-flex flex-column">
                                 <!-- Period  -->
+                            <form action="" method="post">    
                             <div class="form-group">
                                 <div class="form-label">Select Period(day)  Vardiyalar(Sabah 08:00-16:00 | Gece 16:00-08:00)</div>
                                 <div class="custom-controls-stacked">
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="7">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios7" value="7">
                                         <span class="custom-control-label">7</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="14">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios14" value="14">
                                         <span class="custom-control-label">14</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="21">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios21" value="21">
                                         <span class="custom-control-label">21</span>
                                     </label>
                                     <label class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="example-inline-radios" value="28">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios28" value="28">
                                         <span class="custom-control-label">28</span>
-                                        
                                     </label>
+                                    <div class="form-group">
+                                    <button name="Period" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plane"></span> Period</button>
+                                    </div>
                                 </div>
                             </div>
+                            </form>
                                 <!-- Nurse info  -->
                                 <div class="card">
 
@@ -208,7 +210,7 @@ if ($personal_id == 4){
 
                                 </div>
                                 <div class="text-right">
-                                    <button type="button" class="btn btn-primary" id="saveLeft" onclick="disbtnLeft();">Save</button>
+                                    <button type="button" class="btn btn-primary" name ="saveLeft_period" id="saveLeft" onclick="disbtnLeft();">Save</button>
                                 </div>
                             </div>
                         </div>
@@ -271,8 +273,24 @@ if ($personal_id == 4){
                                 <p>Minimum kaç hemşire olacak her saatte
                                     <!-- Table of min. hours  -->
                                 <table class="tg">
-                                <tr> <th class="tg-c3ow">Days/Hours</th>
+                                    <tr> 
+                                        <th class="tg-c3ow">Days/Hours</th>
                                 <?php
+                                $day_limit=0;
+                                if (isset($_POST['Period'])){
+                                    if((isset($_POST['example-inline-radios7']))){
+                                        $day_limit=7;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios14'])){
+                                        $day_limit=14;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios21'])){
+                                        $day_limit=21;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios28'])){
+                                        $day_limit=28;
+                                    }
+                            }
                                 $i1 = 0;
                                 while($i1<24)
                                         {  
@@ -284,7 +302,7 @@ if ($personal_id == 4){
                                 echo '</tr>';
 
                                 $i1 = 0; $day = 1; $deger = 0;
-                                while($day<8){
+                                while($day<$day_limit+1){
                                     echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
                                         while($i1<24)
                                         {  

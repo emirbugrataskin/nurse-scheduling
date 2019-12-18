@@ -104,7 +104,7 @@ if ($personal_id == 4){
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                    <a href="headnurse-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                        <a href="headnurse-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="headnurse-make-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Make Schedule</a>

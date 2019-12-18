@@ -155,16 +155,15 @@ if ($personal_id == 4){
                                                 echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
                                                 $i++;
                                             }   
-                                    ?>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">1</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                </tr>
+                                $index_day =0;
+                                while($index_day<=8){
+                                echo'<tr> td class="tg-baqh">2</td></tr>';
+                                    while($i<=$row_cnt){
+                                    echo'<td class="tg-baqh">1</td>';
+                                    }
+                                    $index_day++;
+                                }
+                                ?>
                                 <tr>
                                     <td class="tg-baqh">2</td>
                                     <td class="tg-baqh">Sabah</td>

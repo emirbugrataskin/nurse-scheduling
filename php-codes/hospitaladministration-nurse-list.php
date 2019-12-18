@@ -117,34 +117,44 @@ if ($personal_id == 1){
 
                             <h6 style="margin-top: 20px; margin-bottom: 50px;">Nurse List</h6>
                             <table class="tg">
-                                <tbody><tr>
-                                    <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Info</th>
-                                    <th class="tg-baqh">asdads</th>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-                                    <td class="tg-baqh">adsads</td>
+                                <tbody>
+                                <?php
+                                echo '<tr> <th class="tg-c3ow">Nurse Name</th> <th class="tg-baqh">Type</th> </tr>';
+                                $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                if ($db->connect_errno > 0) {
+                                    die('Unable to connect to database [' . $db->connect_error . ']');
+                                }
+                                $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                $row_cnt = $result2->num_rows;
 
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Emir</td>
-                                    <td class="tg-baqh">1</td>
-                                    <td class="tg-baqh">asdas</td>
 
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
-                                    <td class="tg-baqh">asdasd</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
-                                    <td class="tg-baqh">adsad</td>
-                                </tr>
-                                </tbody></table>
+                                $i=1;
+                                $hems_isim;
+                                $hems_soyisim;
+                                $p_id;
+                                while($i<=$row_cnt){
+                                $result = $db->query("SELECT name,surname,personal_id FROM personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
+                                    while($row = mysqli_fetch_object($result)){
+                                        $hems_isim = $row->name;
+                                        $hems_soyisim = $row->surname;
+                                        $p_id = $row->personal_id;
+
+                                        if ($p_id == 2){
+                                            $nursetype = "Nurse";
+                                        }
+                                        elseif ($p_id == 3){
+                                            $nursetype = "Senior Nurse";
+                                        }
+                                        elseif ($p_id == 4){
+                                            $nursetype = "Head Nurse";
+                                        }
+                                }    
+                                echo '<tr> <td class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</td> <td class="tg-baqh">'.$nursetype.'</td> </tr>';
+                                $i++;
+                                }
+                                ?>
+                                </tbody>
+                            </table>
 
                         </div>
 

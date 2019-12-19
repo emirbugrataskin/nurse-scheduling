@@ -70,7 +70,7 @@ if ($personal_id == 4){
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./headnurse-index.php">
+                    <a class="header-brand" href="./headnurse-make-schedule.php">
                         <img src="../images/logo.jpeg" class="header-brand-img" alt="tabler logo">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
@@ -101,10 +101,10 @@ if ($personal_id == 4){
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                         <li class="nav-item">
-                    <a href="headnurse-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                    <a href="headnurse-index.php" class="nav-link"><i class="fe fe-home"></i> Home</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a href="headnurse-make-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Make Schedule</a>
+                    <a href="headnurse-make-schedule.php" class="nav-link active"><i class="fe fe-calendar"></i> Make Schedule</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a href="headnurse-show-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Show Schedule</a>
@@ -118,7 +118,6 @@ if ($personal_id == 4){
             </div>
         </div>
         <!-- body-->
-        <!-- burda kan gövdeyi goturecek dikkat Emir :D-->
         <div class="my-3 my-md-5">
             <!--  inside body  -->
             <div class="container">
@@ -130,7 +129,7 @@ if ($personal_id == 4){
                                 <!-- Period  -->
                             <form action="" method="post">    
                             <div class="form-group">
-                                <div class="form-label">Select Period(day)  Vardiyalar(Sabah 08:00-16:00 | Gece 16:00-08:00)</div>
+                                <div class="form-label">Select Period(day)  Shifts(1st Shift 08:00-16:00 | 2nd Shift 16:00-08:00)</div>
                                 <div class="custom-controls-stacked">
                                     <label class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" name="example-inline-radios7" value="7">
@@ -156,16 +155,15 @@ if ($personal_id == 4){
                             </form>
                                 <!-- Nurse info  -->
                                 <div class="card">
-
                                     <div class="card-body">
-                                        <div class="form-label">Hemşire Listesi</div>
+                                        <div class="form-label">Nurse List</div>
                                         <div class="table-responsive">
                                             <table class="table mb-0">
                                                 <thead>
                                                 <tr>
                                                     <th class="pl-0">Nurses</th>
-                                                    <th>Min saat</th>
-                                                    <th>Max saat</th>
+                                                    <th>Min Hour</th>
+                                                    <th>Max Hour</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -225,33 +223,34 @@ if ($personal_id == 4){
                                     <div class="form-group">
                                         <div class="form-label">Enter value</div>
                                         <div class="col-sm-4 col-md-12" style="margin-bottom:10px; margin-top:10px;">
-                                            <p>Hemşireye atanabilecek gece vardiyası sayısı</p>
-                                            <p>Min day</p>
+                                            <p>Number of night shift for Nurses</p>
+                                            <p>MinNightShift</p>
                                             <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
-                                            <p  style="margin-top:10px;">Max day</p>
+                                            <p  style="margin-top:10px;">MaxNightShift</p>
                                             <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card container">
                                     <div class="form-group">
-                                        <div class="form-label">Seçtiğin koşulları önceliğe göre sırala (sürükle bırak)</div>
+                                        <div class="form-label">Sort your constraints top to bottom</div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-controls-stacked">
                                             <div class="col-sm-4 col-md-12">
                                                 <div id="sortable">
-                                                    <li class="ui-state-default" name="1" id="order1">Ardışık çalışılabilecek maksimum gün sayısı</li>
-                                                    <li class="ui-state-default" name="2" id="order2">Hemşireye atanabilecek gece vardiyası sayısı</li>
-                                                    <li class="ui-state-default" name="3" id="order3">Boş geçilebilecek gün sayısı</li>
-                                                    <li class="ui-state-default" name="4" id="order4">Hemşire aynı gün en fazla 1 vardiya da çalışabilir</li>
-                                                    <li class="ui-state-default" name="5" id="order5">Her gün her vardiyada en az bir kıdemli hemşire olmalı</li>
-                                                    <li class="ui-state-default" name="6" id="order6">Gece vardiyasında çalışan hemşire ertesi gün gündüz vardiyasında çalışamaz</li>
-                                                    <li class="ui-state-default" name="7" id="order7">Ardışık olarak gece vardiyasında çalışılamaz</li>
-                                                    <li class="ui-state-default" name="8" id="order8">Ardışık olarak çalışılabilecek gün sayısı (Fix=4)</li>
-                                                    <li class="ui-state-default" name="9" id="order9">Max ardışık boş gün sayısı (Fix=3)</li>
-                                                    <li class="ui-state-default" name="10" id="order10">Hemşireye atanabilecek max gece vardiyası sayısı</li>
-                                                    <li class="ui-state-default" name="11" id="order11">Hemşireye atanabilecek min gece vardiyası sayısı</li>
+                                                    <li class="ui-state-default" name="1" id="order1">Total hours that below minimum working hour for each nurse</li>
+                                                    <li class="ui-state-default" name="2" id="order2">Total hours that exceed maximum working hour for each nurse</li>
+                                                    <li class="ui-state-default" name="3" id="order3">Number of deficit nurse number for each day and each hour</li>
+                                                    <li class="ui-state-default" name="4" id="order4">Number of night shifts that is less than assignable minimum night shift number for each nurse</li>
+                                                    <li class="ui-state-default" name="5" id="order5">Number of night shifts that is more than assignable maximum night shift number for each nurse</li>
+                                                    <li class="ui-state-default" name="6" id="order6">States maximum consecutive working day is exceeded or not for each nurse and each day</li>
+                                                    <li class="ui-state-default" name="7" id="order7">States maximum consecutive free day is exceeded or not for each nurse and each day</li>
+                                                    <li class="ui-state-default" name="8" id="order8">Number of assigned additional shifts for each nurse and each day</li>
+                                                    <li class="ui-state-default" name="9" id="order9">Shows next day worked or not after worked previous day’s night shift for each nurse and each day</li>
+                                                    <li class="ui-state-default" name="10" id="order10">Shows senior nurse is assigned each day and each shift or not</li>
+                                                    <li class="ui-state-default" name="11" id="order11">Shows total not working hours in the shift which covers that hours for each nurse, each day and each shift</li>
+                                                    <li class="ui-state-default" name="12" id="order12">Shows nurse i worked or not on consecutive night shifts </li>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,7 +269,7 @@ if ($personal_id == 4){
                         <div class="card card-aside">
                             <div class="card-body d-flex flex-column">
 
-                                <p>Minimum kaç hemşire olacak her saatte
+                                <p>Minimum necessary nurse number for each day and hour
                                     <!-- Table of min. hours  -->
                                 <table class="tg">
                                     <tr> 
@@ -336,7 +335,7 @@ if ($personal_id == 4){
                         <div class="card card-aside">
                             <div class="card-body d-flex flex-column">
 
-                                <p>Annual Permit Settings 0 or 1</p>
+                                <p> States annual leave </p>
                                 <table class="tg">
                                     <tr>
                                         <th class="tg-c3ow">Days/Nurse Name</th>
@@ -384,7 +383,7 @@ if ($personal_id == 4){
                                 ?>
                                 </table>
                                 <div class="text-right">
-                                    <button type="button" class="btn btn-primary" id="disbtnAnnualPermit" onclick="disbtnAnnualPermit()">Save Annual Permit</button>
+                                    <button type="button" class="btn btn-primary" id="disbtnAnnualPermit" onclick="disbtnAnnualPermit()">Save Annual Leave</button>
                                 </div>
                             </div>
                         </div>

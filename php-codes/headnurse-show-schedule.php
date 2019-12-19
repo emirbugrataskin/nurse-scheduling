@@ -104,13 +104,13 @@ if ($personal_id == 4){
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                        <a href="headnurse-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                        <a href="headnurse-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="headnurse-make-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Make Schedule</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="headnurse-show-schedule.php" class="nav-link"><i class="fe fe-calendar"></i> Show Schedule</a>
+                            <a href="headnurse-show-schedule.php" class="nav-link active"><i class="fe fe-calendar"></i> Show Schedule</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a href="headnurse-availability.php" class="nav-link"><i class="fe fe-calendar"></i> Headnurse Availability</a>
@@ -166,47 +166,41 @@ if ($personal_id == 4){
                                 ?>
                                 <tr>
                                     <td class="tg-baqh">2</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">3</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
                                  </tr>
                                 <tr>
                                     <td class="tg-baqh">4</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td></tr>
                                 <tr>
                                     <td class="tg-baqh">5</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td></tr>
                                 <tr>
                                     <td class="tg-baqh">6</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td></tr>
                                 <tr>
                                     <td class="tg-baqh">7</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
+                                    <td class="tg-baqh">1st Shift</td>
                                     <td class="tg-baqh">Y.İ</td></tr>
                             </table>
                         </div>

@@ -99,16 +99,16 @@ if ($personal_id == 1){
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                         <li class="nav-item">
-                                <a href="./hospitaladministration-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                                <a href="./hospitaladministration-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="hospitaladministration-nurse-list.php" class="nav-link"><i class="fe fe-users"></i> Nurse List</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="hospitaladministration-show-schedule.php" class="nav-link"><i class="fe fe-list"></i> Show Schedule</a>
+                                <a href="hospitaladministration-show-schedule.php" class="nav-link active"><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="hospitaladministration-report.php" class="nav-link"><i class="fe fe-check-square"></i> Report</a>
+                                <a href="hospitaladministration-report.php" class="nav-link "><i class="fe fe-check-square"></i> Report</a>
                             </li>
                         </ul>
                     </div>

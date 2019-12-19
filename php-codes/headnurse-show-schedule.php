@@ -155,53 +155,15 @@ if ($personal_id == 4){
                                                 echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
                                                 $i++;
                                             }   
-                                $index_day =0;
-                                while($index_day<=8){
-                                echo'<tr> td class="tg-baqh">2</td></tr>';
+                                $index_day =1;
+                                while($index_day<=7){
+                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
                                     while($i<=$row_cnt){
                                     echo'<td class="tg-baqh">1</td>';
                                     }
                                     $index_day++;
                                 }
                                 ?>
-                                <tr>
-                                    <td class="tg-baqh">2</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">3</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                 </tr>
-                                <tr>
-                                    <td class="tg-baqh">4</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">5</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">6</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">7</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">1st Shift</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
                             </table>
                         </div>
                     </div>
@@ -211,20 +173,23 @@ if ($personal_id == 4){
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
 
-                                <h1>Çizelge hakkında detaylar</h1>
+                                <h1>Details about schedule</h1>
 
-                                <p>Ardışık boş geçilebilecek maksimum gün sayısı</p>
-                                <p>Planlama periyodu boyunca atanan gece vardiyası sayısı</p>
-                                <p>Yıllık izin kullanımı</p>
-                                <p>Ardışık çalışılabilecek maksimum gün sayısı aşımı</p>
-                                <p>Sağlanamayan genel kurallar</p>
-                                <p>Ardışık olarak gece vardiyasına gelen hemşireler</p>
-                                <p>Gece vardiyasında ve ertesi gün gündüz vardiyasına çalışacak hemşireler</p>
-                                <p>Kıdemli hemşire bulunmayan gün ve vardiya</p>
-                                <p>Çalışılan saatler, ek mesai ve aralarındaki farklar</p>
-                                <p>Çalışılan saatler, ek mesai ve aralarındaki farklar</p>
+                                <p>Number of days in the planning period</p>
+                                <p>PNumber of nurses</p>
+                                <p>Number of shifts </p>
+                                <p>Minimum number of night shift for nurses</p>
+                                <p>Maximum number of night shift for nurses</p>
+                                <p>Rate of assignable maximum number of night shift constraint</p>
+                                <p>Rate of assignable minimum number of night shift constraint</p>
+                                <p>Rate of maximum free consecutive day constraint</p>
+                                <p>Rate of maximum consecutive working day constraint</p>
+                                <p>Rate of working next day after worked previous day’s night shift</p>
+                                <p>Rate of assigning no more than one shift in a day</p>
+                                <p>Rate of assigning senior nurse to each shift for everyday</p>
+                                <p>Rate of can’t working on consecutive night shifts</p>
 
-                                <p>Grafik raporu</p>
+                                <p>Graphic Reports</p>
 
 
                         </div>
@@ -236,7 +201,7 @@ if ($personal_id == 4){
                     <div class="card card-aside">
 
                         <div class="card-body d-flex flex-column">
-                            <h6 >Ardışık boş geçilebilecek maksimum gün sayısı</h6>
+                            <h6 >Rate of maximum free consecutive day constrain</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
@@ -261,71 +226,7 @@ if ($personal_id == 4){
                                     <td class="tg-baqh">3</td>
                                 </tr>
                             </table>
-                            <h6 style="margin-top: 20px;">Atanan gece vardiyası sayısı</h6>
-                            <table class="tg">
-                                <tr>
-                                    <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Emir</td>
-                                    <td class="tg-baqh">1</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
-                                </tr>
-                            </table>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- show some compare-->
-                <div class="col-lg-6" style="float:left;">
-
-                    <div class="card card-aside">
-
-                        <div class="card-body d-flex flex-column">
-
-                            <h6>Yıllık İzin Kullanımı</h6>
-                            <table class="tg">
-                                <tr>
-                                    <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Emir</td>
-                                    <td class="tg-baqh">1</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
-                                </tr>
-                            </table>
-
-                            <h6 style="margin-top: 20px;">Ardışık çalışılabilecek maksimum gün sayısı aşımı</h6>
+                            <h6 style="margin-top: 20px;">Number of night shift for nurses</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
@@ -362,7 +263,71 @@ if ($personal_id == 4){
                     <div class="card card-aside">
 
                         <div class="card-body d-flex flex-column">
-                            <h6>Kim ne kadar kim için neden çalıştı</h6>
+
+                            <h6>Annual Leave Numbers</h6>
+                            <table class="tg">
+                                <tr>
+                                    <th class="tg-c3ow">Nurse Name</th>
+                                    <th class="tg-baqh">Gün sayısı</th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Tuğkan</td>
+                                    <td class="tg-baqh">0</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">1</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İlayda</td>
+                                    <td class="tg-baqh">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İdris</td>
+                                    <td class="tg-baqh">3</td>
+                                </tr>
+                            </table>
+
+                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and each day</h6>
+                            <table class="tg">
+                                <tr>
+                                    <th class="tg-c3ow">Nurse Name</th>
+                                    <th class="tg-baqh">Gün sayısı</th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Tuğkan</td>
+                                    <td class="tg-baqh">0</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">1</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İlayda</td>
+                                    <td class="tg-baqh">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">İdris</td>
+                                    <td class="tg-baqh">3</td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- show some compare-->
+                <div class="col-lg-6" style="float:left;">
+
+                    <div class="card card-aside">
+
+                        <div class="card-body d-flex flex-column">
+                            <h6>Number of assigned additional shifts for each nurse and each day</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>

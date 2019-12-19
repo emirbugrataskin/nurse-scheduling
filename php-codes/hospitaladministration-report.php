@@ -100,13 +100,13 @@ if ($personal_id == 1){
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                         <li class="nav-item">
-                                <a href="./hospitaladministration-index.php" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                                <a href="./hospitaladministration-index.php" class="nav-link "><i class="fe fe-home"></i> Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="hospitaladministration-nurse-list.php" class="nav-link"><i class="fe fe-users"></i> Nurse List</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="hospitaladministration-show-schedule.php" class="nav-link"><i class="fe fe-list"></i> Show Schedule</a>
+                                <a href="hospitaladministration-show-schedule.php" class="nav-link active"><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="hospitaladministration-report.php" class="nav-link"><i class="fe fe-check-square"></i> Report</a>
@@ -123,23 +123,22 @@ if ($personal_id == 1){
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
 
-                            <h1>Çizelge hakkında detaylar</h1>
-
-                            <p>Ardışık boş geçilebilecek maksimum gün sayısı</p>
-                            <p>Planlama periyodu boyunca atanan gece vardiyası sayısı</p>
-                            <p>Yıllık izin kullanımı</p>
-                            <p>Ardışık çalışılabilecek maksimum gün sayısı aşımı</p>
-                            <p>Sağlanamayan genel kurallar</p>
-                            <p>Ardışık olarak gece vardiyasına gelen hemşireler</p>
-                            <p>Gece vardiyasında ve ertesi gün gündüz vardiyasına çalışacak hemşireler</p>
-                            <p>Kıdemli hemşire bulunmayan gün ve vardiya</p>
-                            <p>Çalışılan saatler, ek mesai ve aralarındaki farklar</p>
-                            <p>Çalışılan saatler, ek mesai ve aralarındaki farklar</p>
-
-                            <p>Grafik raporu</p>
-
-
-                        </div>
+                        <h1>Details about schedule</h1>
+                        <p>Number of days in the planning period</p>
+                        <p>PNumber of nurses</p>
+                        <p>Number of shifts </p>
+                        <p>Minimum number of night shift for nurses</p>
+                        <p>Maximum number of night shift for nurses</p>
+                        <p>Rate of assignable maximum number of night shift constraint</p>
+                        <p>Rate of assignable minimum number of night shift constraint</p>
+                        <p>Rate of maximum free consecutive day constraint</p>
+                        <p>Rate of maximum consecutive working day constraint</p>
+                        <p>Rate of working next day after worked previous day’s night shift</p>
+                        <p>Rate of assigning no more than one shift in a day</p>
+                        <p>Rate of assigning senior nurse to each shift for everyday</p>
+                        <p>Rate of can’t working on consecutive night shifts</p>
+                        <p>Graphic Reports</p>
+                      </div>
                     </div>
                 </div>
                 <!-- show some compare-->
@@ -148,7 +147,7 @@ if ($personal_id == 1){
                     <div class="card card-aside">
 
                         <div class="card-body d-flex flex-column">
-                            <h6 >Ardışık boş geçilebilecek maksimum gün sayısı</h6>
+                            <h6 >Rate of maximum free consecutive day constrain</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
@@ -173,7 +172,7 @@ if ($personal_id == 1){
                                     <td class="tg-baqh">3</td>
                                 </tr>
                             </table>
-                            <h6 style="margin-top: 20px;">Atanan gece vardiyası sayısı</h6>
+                            <h6 style="margin-top: 20px;">Number of night shift for nurses</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
@@ -211,7 +210,7 @@ if ($personal_id == 1){
 
                         <div class="card-body d-flex flex-column">
 
-                            <h6>Yıllık İzin Kullanımı</h6>
+                            <h6>Annual Leave Numbers</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
@@ -237,7 +236,7 @@ if ($personal_id == 1){
                                 </tr>
                             </table>
 
-                            <h6 style="margin-top: 20px;">Ardışık çalışılabilecek maksimum gün sayısı aşımı</h6>
+                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and each day</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>

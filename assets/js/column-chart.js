@@ -3,7 +3,7 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Type', 'normal mesai', 'ek mesai', 'bir şeyler mesaisi'],
+        ['Type', 'Normal Shift', 'Extra shift'],
         ['Tuğkan', 30, 10, 5],
         ['Emir', 40, 20, 0],
         ['İdris', 15, 10, 3],

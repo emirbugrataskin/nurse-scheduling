@@ -96,7 +96,7 @@ else{
                                 <a href="./nurse-show-schedule.php" class="nav-link "><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>availability</a>
+                                <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>Availability day</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="./nurse-info.php" class="nav-link active "><i class="fe fe-check-circle"></i> My Info</a>
@@ -113,10 +113,10 @@ else{
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
                             <!-- it will be data from database-->
-                <p>Çalışılan gün:</p>
-                <p>Çalışılan saat:</p>
-                <p>Ek mesai:</p>
-                <p>Yıllık izin kullanılan gün sayısı:</p>
+                <p>Total Work Days:</p>
+                <p>Total Work Hours:</p>
+                <p>Extra work by hours:</p>
+                <p>Total Annual Leave Day by Period:</p>
                         </div>
                     </div>
                 </div>

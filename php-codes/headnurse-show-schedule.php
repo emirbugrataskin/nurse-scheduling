@@ -205,7 +205,7 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -230,7 +230,7 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -268,7 +268,7 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -294,7 +294,7 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -331,7 +331,7 @@ if ($personal_id == 4){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>

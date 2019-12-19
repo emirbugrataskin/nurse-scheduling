@@ -218,39 +218,96 @@ if ($personal_id == 4){
                         <div class="card card-aside">
                             <div class="card-body d-flex flex-column">
                                 <!-- Period  -->
-
-                                <div class="card container">
-                                    <div class="form-group">
-                                        <div class="form-label">Enter value</div>
-                                        <div class="col-sm-4 col-md-12" style="margin-bottom:10px; margin-top:10px;">
-                                            <p>Number of night shift for Nurses</p>
-                                            <p>MinNightShift</p>
-                                            <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
-                                            <p  style="margin-top:10px;">MaxNightShift</p>
-                                            <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="card container">
                                     <div class="form-group">
                                         <div class="form-label">Sort your constraints top to bottom</div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style>
                                         <div class="custom-controls-stacked">
-                                            <div class="col-sm-4 col-md-12">
-                                                <div id="sortable">
-                                                    <li class="ui-state-default" name="1" id="order1">Total hours that below minimum working hour for each nurse</li>
-                                                    <li class="ui-state-default" name="2" id="order2">Total hours that exceed maximum working hour for each nurse</li>
-                                                    <li class="ui-state-default" name="3" id="order3">Number of deficit nurse number for each day and each hour</li>
-                                                    <li class="ui-state-default" name="4" id="order4">Number of night shifts that is less than assignable minimum night shift number for each nurse</li>
-                                                    <li class="ui-state-default" name="5" id="order5">Number of night shifts that is more than assignable maximum night shift number for each nurse</li>
-                                                    <li class="ui-state-default" name="6" id="order6">States maximum consecutive working day is exceeded or not for each nurse and each day</li>
-                                                    <li class="ui-state-default" name="7" id="order7">States maximum consecutive free day is exceeded or not for each nurse and each day</li>
-                                                    <li class="ui-state-default" name="8" id="order8">Number of assigned additional shifts for each nurse and each day</li>
-                                                    <li class="ui-state-default" name="9" id="order9">Shows next day worked or not after worked previous day’s night shift for each nurse and each day</li>
-                                                    <li class="ui-state-default" name="10" id="order10">Shows senior nurse is assigned each day and each shift or not</li>
-                                                    <li class="ui-state-default" name="11" id="order11">Shows total not working hours in the shift which covers that hours for each nurse, each day and each shift</li>
-                                                    <li class="ui-state-default" name="12" id="order12">Shows nurse i worked or not on consecutive night shifts </li>
+                                            <div class="col-sm-4 col-md-12" style="margin-bottom:10px; margin-top:10px;">
+                                                <p>Number of night shift for Nurses</p>
+                                                <div class="col-3"><p>MinNightShift</p><input type="number" min="0"  class="form-control" placeholder="Value"></div>
+                                                <p  style="margin-top:10px;">MaxNightShift</p>
+                                                <div class="col-3"><input type="number" min="0"  class="form-control" placeholder="Value"></div>
+
+
+                                                <div class="form-label" style="margin-top:10px">Enter value</div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder1">
+                                                <span class="input-group-text" style="font-size: 12px;">Total hours that below minimum working hour for each nurse</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder2">
+                                                <span class="input-group-text" style="font-size: 12px;">Total hours that exceed maximum working hour for each nurse</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder3">
+                                                <span class="input-group-text" style="font-size: 12px;">Number of deficit nurse number for each day and each hour</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder4">
+                                                <span class="input-group-text" style="font-size: 10px;">Number of night shifts that is less than assignable minimum night shift number for each nurse</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder5">
+                                                <span class="input-group-text" style="font-size: 9px;">Number of night shifts that is more than assignable maximum night shift number for each nurse</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder6">
+                                                <span class="input-group-text" style="font-size: 10px;">States maximum consecutive working day is exceeded or not for each nurse and each day</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder7">
+                                                <span class="input-group-text" style="font-size: 12px;">Number of assigned additional shifts for each nurse and each day</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder8">
+                                                <span class="input-group-text" style="font-size: 9px;">Shows next day worked or not after worked previous day’s night shift for each nurse and each day</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder9">
+                                                <span class="input-group-text" style="font-size: 12px;">Shows senior nurse is assigned each day and each shift or not</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder10">
+                                                <span class="input-group-text" style="font-size: 9px;">Shows total not working hours in the shift which covers that hours for each nurse, each day and each shift</span>
+                                                </span>
+                                                </div>
+
+                                                <div class="input-group" style="margin-top:10px;">
+                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <span class="input-group-append" id="constraintsOrder11">
+                                                <span class="input-group-text" style="font-size: 12px;">Shows nurse i worked or not on consecutive night shifts </span>
+                                                </span>
                                                 </div>
                                             </div>
                                         </div>

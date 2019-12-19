@@ -124,67 +124,41 @@ if ($personal_id == 1){
                         <h6>Schedule</h6>
                         <!-- Table of min. hours  -->
                         <table class="tg">
-                            <tr>
-                                <th class="tg-c3ow">Days/Nurse Name</th>
-                                <th class="tg-baqh">Tuğkan</th>
-                                <th class="tg-baqh">Emir</th>
-                                <th class="tg-baqh">Yıldırımhan</th>
-                                <th class="tg-baqh">İdris</th>
-                                <th class="tg-baqh">İlayda</th>
-                            </tr>
-                            <tr>
-                                <td class="tg-baqh">1</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td>
-                            </tr>
-                            <tr>
-                                <td class="tg-baqh">2</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td>
-                            </tr>
-                            <tr>
-                                <td class="tg-baqh">3</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td>
-                            </tr>
-                            <tr>
-                                <td class="tg-baqh">4</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td></tr>
-                            <tr>
-                                <td class="tg-baqh">5</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td></tr>
-                            <tr>
-                                <td class="tg-baqh">6</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td></tr>
-                            <tr>
-                                <td class="tg-baqh">7</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Öğle</td>
-                                <td class="tg-baqh">Y.İ</td>
-                                <td class="tg-baqh">Sabah</td>
-                                <td class="tg-baqh">Y.İ</td></tr>
-                        </table>
+                                <tr>
+                                    <th class="tg-c3ow">Days/Nurse Name</th>
+                                    <?php
+                                        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                        if ($db->connect_errno > 0) {
+                                             die('Unable to connect to database [' . $db->connect_error . ']');
+                                        }
+
+                                            $i=1;
+                                            $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                            $row_cnt = $result2->num_rows;
+                                            $personal_id  = $row['personal_id'];
+                                
+                                            while($i<=$row_cnt){
+                                                $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
+                                                $hems_isim;
+                                                $hems_soyisim;
+
+                                                while($row = mysqli_fetch_object($result)){
+                                                    $hems_isim = $row->name;
+                                                    $hems_soyisim = $row->surname; 
+                                                }
+                                                echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                $i++;
+                                            }   
+                                $index_day =1;
+                                while($index_day<=7){
+                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
+                                    while($i<=$row_cnt){
+                                    echo'<td class="tg-baqh">1</td>';
+                                    }
+                                    $index_day++;
+                                }
+                                ?>
+                            </table>
                     </div>
                 </div>
             </div>

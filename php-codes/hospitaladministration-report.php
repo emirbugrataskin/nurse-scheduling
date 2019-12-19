@@ -106,10 +106,10 @@ if ($personal_id == 1){
                                 <a href="hospitaladministration-nurse-list.php" class="nav-link"><i class="fe fe-users"></i> Nurse List</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="hospitaladministration-show-schedule.php" class="nav-link active"><i class="fe fe-list"></i> Show Schedule</a>
+                                <a href="hospitaladministration-show-schedule.php" class="nav-link"><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="hospitaladministration-report.php" class="nav-link"><i class="fe fe-check-square"></i> Report</a>
+                                <a href="hospitaladministration-report.php" class="nav-link active"><i class="fe fe-check-square"></i> Report</a>
                             </li>
                         </ul>
                     </div>
@@ -125,7 +125,7 @@ if ($personal_id == 1){
 
                         <h1>Details about schedule</h1>
                         <p>Number of days in the planning period</p>
-                        <p>PNumber of nurses</p>
+                        <p>Number of nurses</p>
                         <p>Number of shifts </p>
                         <p>Minimum number of night shift for nurses</p>
                         <p>Maximum number of night shift for nurses</p>
@@ -151,7 +151,7 @@ if ($personal_id == 1){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -176,7 +176,7 @@ if ($personal_id == 1){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -214,7 +214,7 @@ if ($personal_id == 1){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
@@ -240,7 +240,7 @@ if ($personal_id == 1){
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Gün sayısı</th>
+                                    <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>

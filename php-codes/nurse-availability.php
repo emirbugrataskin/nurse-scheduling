@@ -118,7 +118,7 @@ else{
                                 <a href="./nurse-show-schedule.php" class="nav-link "><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./nurse-availability.php" class="nav-link active"><i class="fe fe-airplay"></i>availability</a>
+                                <a href="./nurse-availability.php" class="nav-link active"><i class="fe fe-airplay"></i>Availability days</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="./nurse-info.php" class="nav-link  "><i class="fe fe-check-circle"></i> My Info</a>
@@ -135,12 +135,53 @@ else{
                 <div class="col-lg-12" id="disableSchedule">
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
-                            <p>Çalışamayacağın saatleri Check et</p>
+                            <p>Check the hours that you don't want to work</p>
                             <form class="form-horizontal" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                                 <!-- Table of min. hours  -->
+
+                            <form action="" method="post">    
+                            <div class="form-group">
+                                <div class="form-label">Select Period(day)  Shifts(1st Shift 08:00-16:00 | 2nd Shift 16:00-08:00)</div>
+                                <div class="custom-controls-stacked">
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios7" value="7">
+                                        <span class="custom-control-label">7</span>
+                                    </label>
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios14" value="14">
+                                        <span class="custom-control-label">14</span>
+                                    </label>
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios21" value="21">
+                                        <span class="custom-control-label">21</span>
+                                    </label>
+                                    <label class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="example-inline-radios28" value="28">
+                                        <span class="custom-control-label">28</span>
+                                    </label>
+                                    <div class="form-group">
+                                    <button name="Period" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plane"></span> Period</button>
+                                    </div>
+                                </div>
+                            </div>
                             <table class="tg">
                                 <tr> <th class="tg-c3ow">Days/Hours</th>
                                 <?php
+                                $day_limit=0;
+                                if (isset($_POST['Period'])){
+                                    if((isset($_POST['example-inline-radios7']))){
+                                        $day_limit=7;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios14'])){
+                                        $day_limit=14;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios21'])){
+                                        $day_limit=21;
+                                    }
+                                    elseif (isset($_POST['example-inline-radios28'])){
+                                        $day_limit=28;
+                                    }
+                                }
                                 $i1 = 0;
                                 while($i1<24)
                                         {  
@@ -152,7 +193,7 @@ else{
                                 echo '</tr>';
 
                                     $i1 = 0; $day = 1; $deger = 0;
-                                    while($day<8){
+                                    while($day<$day_limit+1){
                                         echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
                                         while($i1<24)
                                         {  

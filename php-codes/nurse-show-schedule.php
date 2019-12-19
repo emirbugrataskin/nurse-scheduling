@@ -106,7 +106,7 @@ else{
                                 <a href="./nurse-show-schedule.php" class="nav-link active"><i class="fe fe-list"></i> Show Schedule</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>availability</a>
+                                <a href="./nurse-availability.php" class="nav-link "><i class="fe fe-airplay"></i>Availability day</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="./nurse-info.php" class="nav-link "><i class="fe fe-check-circle"></i> My Info</a>
@@ -129,64 +129,30 @@ else{
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Days/Nurse Name</th>
-                                    <th class="tg-baqh">Tuğkan</th>
-                                    <th class="tg-baqh">Emir</th>
-                                    <th class="tg-baqh">Yıldırımhan</th>
-                                    <th class="tg-baqh">İdris</th>
-                                    <th class="tg-baqh">İlayda</th>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">1</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">2</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">3</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">4</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">5</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">6</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
-                                <tr>
-                                    <td class="tg-baqh">7</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Öğle</td>
-                                    <td class="tg-baqh">Y.İ</td>
-                                    <td class="tg-baqh">Sabah</td>
-                                    <td class="tg-baqh">Y.İ</td></tr>
+                                    <?php
+                                        $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                        if ($db->connect_errno > 0) {
+                                             die('Unable to connect to database [' . $db->connect_error . ']');
+                                        }
+                                            $i=1;                                
+                                            while($i<=1){
+                                                $result = $db->query("SELECT name,surname from personal WHERE username='$username' ");
+                                                $hems_isim;
+                                                $hems_soyisim;
+
+                                                while($row = mysqli_fetch_object($result)){
+                                                    $hems_isim = $row->name;
+                                                    $hems_soyisim = $row->surname; 
+                                                }
+                                                echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                $i++;
+                                            }   
+                                $index_day =1;
+                                while($index_day<=7){
+                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
+                                    $index_day++;
+                                }
+                                ?>
                             </table>
                         </div>
                     </div>

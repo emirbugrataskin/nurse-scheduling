@@ -67,7 +67,7 @@
               </div>
               <form class="card" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="card-body p-6">
-                  <div class="card-title">Login to your account</div>
+                  <div class="card-title">Login to Your NSP Account</div>
                   <div class="form-group">
                     <label class="form-label">Username</label>
                     <input type="username" class="form-control" name="exampleInputUsername1" id="exampleInputUsername1" placeholder="Username">
@@ -80,10 +80,6 @@
                     <input type="password" class="form-control" name="exampleInputPassword1" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group">
-                    <label class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" />
-                      <span class="custom-control-label">Remember me</span>
-                    </label>
                   </div>
                   <div class="form-group">
                 <div class="text-center">
@@ -91,16 +87,10 @@
                 </div>
               </div>
                   <div class="form-footer">
-                    <button name ="submit"  type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    <button name ="submit"  type="submit" class="btn btn-primary btn-block">Sign In</button>
                   </div>
                 </div>
               </form>
-              <div class="text-center text-muted">
-                Don't have account yet? <a href="main-register.html">Sign up</a>
-              </div>
-              <div class="text-center text-muted">
-                Forgot Password <a href="main-forgot-password.html">Reset Password</a>
-              </div>
             </div>
           </div>
         </div>

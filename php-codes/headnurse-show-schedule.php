@@ -176,7 +176,7 @@ if ($personal_id == 4){
                                 <h1>Details about schedule</h1>
 
                                 <p>Number of days in the planning period</p>
-                                <p>PNumber of nurses</p>
+                                <p>Number of nurses</p>
                                 <p>Number of shifts </p>
                                 <p>Minimum number of night shift for nurses</p>
                                 <p>Maximum number of night shift for nurses</p>
@@ -207,6 +207,7 @@ if ($personal_id == 4){
                                     <th class="tg-c3ow">Nurse Name</th>
                                     <th class="tg-baqh">Day Number</th>
                                 </tr>
+                                
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
                                     <td class="tg-baqh">0</td>
@@ -232,6 +233,30 @@ if ($personal_id == 4){
                                     <th class="tg-c3ow">Nurse Name</th>
                                     <th class="tg-baqh">Day Number</th>
                                 </tr>
+                                <?php
+                                     $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                     if ($db->connect_errno > 0) {
+                                       die('Unable to connect to database [' . $db->connect_error . ']');
+                                     }
+                                     $i=1;
+                                     
+                                     
+                                     $result2 = $db->query("SELECT COUNT(shiftIndex) as gece_shift FROM nurseschedulebyshift WHERE shiftIndex ='2' AND user_id='4'");
+                                     while($i<=$row_cnt){
+                                        $row_cnt = $result->num_rows;
+                                        $result = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id LIMIT $i");
+                                     while($row = mysqli_fetch_object($result)){
+                                         $isim = $row->name;
+                                         $soyisim = $row->surname; 
+                                     }
+                                     while($row2 = mysqli_fetch_object($result2)){
+                                        $night_shift = $row2->gece_shift;
+                                     }          
+
+                                     echo'<td class="tg-baqh">'.$isim.' '.$soyisim.'</td> <td class="tg-baqh">'.$night_shift.'</td>';
+                                     $i++;
+                                    }
+                                ?>
                                 <tr>
                                     <td class="tg-baqh">Tuğkan</td>
                                     <td class="tg-baqh">0</td>

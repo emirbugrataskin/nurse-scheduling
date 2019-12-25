@@ -24,7 +24,7 @@ if ($personal_id == 4){
         .tg th {border: 1px solid rgba(0, 40, 100, 0.12)!important}
         .tg td {border: 1px solid rgba(0, 40, 100, 0.12)!important}
         .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-        .tg td{font-family:Arial, sans-serif;font-size:12px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg td{font-family:Arial, sans-serif;font-size:10px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
         .tg th{font-family:Arial, sans-serif;font-size:8px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
         .tg .tg-baqh{text-align:center;vertical-align:top}
         .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
@@ -234,77 +234,77 @@ if ($personal_id == 4){
                                                 <div class="form-label" style="margin-top:10px">Enter value</div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder1">
-                                                <span class="input-group-text" style="font-size: 12px;">Total hours that below minimum working hour for each nurse</span>
+                                                <span class="input-group-text" style="font-size: 10px;">Total hours that below minimum working hour for each nurse</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm"  maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder2">
                                                 <span class="input-group-text" style="font-size: 12px;">Total hours that exceed maximum working hour for each nurse</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm"  maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder3">
                                                 <span class="input-group-text" style="font-size: 12px;">Number of deficit nurse number for each day and each hour</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder4">
                                                 <span class="input-group-text" style="font-size: 10px;">Number of night shifts that is less than assignable minimum night shift number for each nurse</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm"  maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder5">
                                                 <span class="input-group-text" style="font-size: 9px;">Number of night shifts that is more than assignable maximum night shift number for each nurse</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm"  maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder6">
                                                 <span class="input-group-text" style="font-size: 10px;">States maximum consecutive working day is exceeded or not for each nurse and each day</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder7">
                                                 <span class="input-group-text" style="font-size: 12px;">Number of assigned additional shifts for each nurse and each day</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder8">
                                                 <span class="input-group-text" style="font-size: 9px;">Shows next day worked or not after worked previous day’s night shift for each nurse and each day</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder9">
                                                 <span class="input-group-text" style="font-size: 12px;">Shows senior nurse is assigned each day and each shift or not</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm"  maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder10">
-                                                <span class="input-group-text" style="font-size: 9px;">Shows total not working hours in the shift which covers that hours for each nurse, each day and each shift</span>
+                                                <span class="input-group-text" style="font-size: 8px;">Shows total not working hours in the shift which covers that hours for each nurse, each day and each shift</span>
                                                 </span>
                                                 </div>
 
                                                 <div class="input-group" style="margin-top:10px;">
-                                                    <input type="text" class="form-control-sm" placeholder="Enter the number" maxlength="5" size="5">
+                                                    <input type="text" class="form-control-sm" maxlength="5" size="3">
                                                     <span class="input-group-append" id="constraintsOrder11">
                                                 <span class="input-group-text" style="font-size: 12px;">Shows nurse i worked or not on consecutive night shifts </span>
                                                 </span>
@@ -320,7 +320,12 @@ if ($personal_id == 4){
                         </div>
 
                     </div>
-
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-primary" id="saveRight" onclick="disbtnRight();">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Mid side (Table) min. hours  -->
                     <div class="col-lg-12" id="disableMinHours">
                         <div class="card card-aside">
@@ -397,6 +402,21 @@ if ($personal_id == 4){
                                     <tr>
                                         <th class="tg-c3ow">Days/Nurse Name</th>
                                         <?php
+                                        $day_limit=0;
+                                        if (isset($_POST['Period'])){
+                                            if((isset($_POST['example-inline-radios7']))){
+                                                $day_limit=7;
+                                            }
+                                            elseif (isset($_POST['example-inline-radios14'])){
+                                                $day_limit=14;
+                                            }
+                                            elseif (isset($_POST['example-inline-radios21'])){
+                                                $day_limit=21;
+                                            }
+                                            elseif (isset($_POST['example-inline-radios28'])){
+                                                $day_limit=28;
+                                            }
+                                        }
                                         $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                                         if ($db->connect_errno > 0) {
                                              die('Unable to connect to database [' . $db->connect_error . ']');
@@ -423,7 +443,7 @@ if ($personal_id == 4){
                                     </tr>
                                     <?php
                                 $i1 = 0; $day = 1; $deger = 0;
-                                while($day<8){
+                                while($day<$day_limit+1){
                                     echo '<tr> <td class="tg-baqh"> ' .$day. ' </td>';
                                         while($i1<$row_cnt)
                                         {  

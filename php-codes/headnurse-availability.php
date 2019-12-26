@@ -219,7 +219,9 @@ if ($personal_id == 4){
 
             </div>
         </div>
-        <?php 
+    </div>
+    <div class="container" > 
+    <?php 
             if (isset($_POST['nurse_day_array'])){
                 $nds = $_POST['nurse_day_array'];
                 print_r ($nds);

@@ -148,10 +148,7 @@ if (isset($_POST['submit'])) {
     <div class="my-2 my-md-5">
       <div class="container">
         <div class="row">
-          <div class="col col-login mx-auto">
-            <div class="text-center mb-6">
-              <img src="./assets/brand/tabler.svg" class="h-6" alt="">
-            </div>
+          <div class="col col-login mx-auto" style="margin-top: 30px">
             <form class="card" action="" method="post">
               <div class="card-body p-6">
                 <div class="card-title">Delete account</div>

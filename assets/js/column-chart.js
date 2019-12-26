@@ -3,12 +3,12 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Type', 'Normal Shift', 'Extra shift'],
-        ['Tuğkan', 30, 10, 5],
-        ['Emir', 40, 20, 0],
-        ['İdris', 15, 10, 3],
-        ['Yıldo', 15, 10, 3],
-        ['İlayda', 15, 10, 3]
+        ['Type', 'Shift Hours', 'Extra Shift Hours', 'Limit Hours'],
+        ['Nurse 1', 35, 10, 10],
+        ['Nurse 2', 40, 10, 0],
+        ['Nurse 3', 15, 15, 5],
+        ['Nurse 4', 45, 5, 0],
+        ['Nurse 5', 43, 7, 0]
     ]);
 
     var options = {
@@ -63,5 +63,3 @@ function findStyleRoleColumn(view) {
     }
     return -1;
 }
-
-

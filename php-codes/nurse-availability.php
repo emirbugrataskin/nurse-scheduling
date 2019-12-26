@@ -159,7 +159,7 @@ else{
                                         <input type="radio" class="custom-control-input" name="example-inline-radios28" value="28">
                                         <span class="custom-control-label">28</span>
                                     </label>
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-top: 20px">
                                     <button name="Period" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plane"></span> Period</button>
                                     </div>
                                 </div>
@@ -207,8 +207,8 @@ else{
                                     } 
                                 ?>
                             </table>
-                            <div class="text-right">
-                            <input style="background-color:#800000;" type="submit" class="btn btn-primary" value="Submit">
+                            <div class="text-right" style="margin-top: 15px">
+                            <input  type="submit" class="btn btn-primary" value="Submit">
                             </div>
                             </form>
                             

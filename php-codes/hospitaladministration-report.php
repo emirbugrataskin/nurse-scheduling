@@ -17,6 +17,7 @@ if ($personal_id == 1){
     $usertype = "Hospital Manager";
 }
 ?>
+
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -238,7 +239,7 @@ if ($personal_id == 1){
                                 </tr>
                             </table>
 
-                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and each day</h6>
+                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and day</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>

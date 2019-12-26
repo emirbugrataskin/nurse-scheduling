@@ -62,9 +62,6 @@
         <div class="container">
           <div class="row">
             <div class="col col-login mx-auto">
-              <div class="text-center mb-6">
-                <img src="./assets/brand/tabler.svg" class="h-6" alt="">
-              </div>
               <form class="card" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="card-body p-6">
                   <div class="card-title">Welcome to Nurse Scheduling System</div>

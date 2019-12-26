@@ -122,23 +122,25 @@ if ($personal_id == 1){
                 <div class="col-lg-12" style="float: left;">
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
+                        <?php echo'
+                                <h1>Value of Parameters</h1>
 
-                        <h1>Details about schedule</h1>
-                        <p>Number of days in the planning period</p>
-                        <p>Number of nurses</p>
-                        <p>Number of shifts </p>
-                        <p>Minimum number of night shift for nurses</p>
-                        <p>Maximum number of night shift for nurses</p>
-                        <p>Rate of assignable maximum number of night shift constraint</p>
-                        <p>Rate of assignable minimum number of night shift constraint</p>
-                        <p>Rate of maximum free consecutive day constraint</p>
-                        <p>Rate of maximum consecutive working day constraint</p>
-                        <p>Rate of working next day after worked previous day’s night shift</p>
-                        <p>Rate of assigning no more than one shift in a day</p>
-                        <p>Rate of assigning senior nurse to each shift for everyday</p>
-                        <p>Rate of can’t working on consecutive night shifts</p>
-                        <p>Graphic Reports</p>
-                      </div>
+                                <p>Number of days in the planning period: 5</p>
+                                <p>Number of nurses: 4</p>
+                                <p>Number of shifts: 2 </p>
+                                <p>Minimum number of night shift for nurses: 1</p>
+                                <p>Maximum number of night shift for nurses: 3</p>
+                                <p>Rate of assignable maximum number of night shift constraint: 1</p>
+                                <p>Rate of assignable minimum number of night shift constraint: 1</p>
+                                <p>Rate of maximum free consecutive day constraint: 1</p>
+                                <p>Rate of maximum consecutive working day constraint: 1</p>
+                                <p>Rate of working next day after worked previous day’s night shift: 1</p>
+                                <p>Rate of assigning no more than one shift in a day: 1</p>
+                                <p>Rate of assigning senior nurse to each shift for everyday: 1</p>
+                                <p>Rate of can’t working on consecutive night shifts: 1</p>'
+
+                        ?>
+                        </div>
                     </div>
                 </div>
                 <!-- show some compare-->

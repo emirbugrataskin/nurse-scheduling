@@ -136,27 +136,41 @@ if ($personal_id == 1){
                                             $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
                                             $row_cnt = $result2->num_rows;
                                             $personal_id  = $row['personal_id'];
-                                
-                                            while($i<=$row_cnt){
-                                                $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
-                                                $hems_isim;
-                                                $hems_soyisim;
+                                            $result4 = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id");
+                                            $result4_rowcnt = $result4->num_rows;
+
+                                            while($i<=$result4_rowcnt){
+                                                
+                                                $result = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id LIMIT $i");
+                                                
 
                                                 while($row = mysqli_fetch_object($result)){
                                                     $hems_isim = $row->name;
                                                     $hems_soyisim = $row->surname; 
                                                 }
                                                 echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                
                                                 $i++;
-                                            }   
-                                $index_day =1;
-                                while($index_day<=7){
-                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
-                                    while($i<=$row_cnt){
-                                    echo'<td class="tg-baqh">1</td>';
-                                    }
-                                    $index_day++;
-                                }
+                                            }
+                                            $result3 = $db->query("SELECT DISTINCT dayIndex FROM `nurseschedulebyshift`");  
+                                            $row_count = $result3->num_rows;
+                                            $index_day =1;
+                                            $result3 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                            while($index_day<=$row_count){
+                                            echo'<tr> <td class="tg-baqh">'.$index_day.'</td> ';
+                                            $i1="1st Shift";
+                                            $i2="2nd Shift";
+                                            $i3=1;
+                                            while($i3<=$result4_rowcnt){
+                                                echo'<td class="tg-baqh">'.$i1.' & '.$i2.' ';
+                                                $i3++;
+                                            }
+                                            echo'</td></tr> ';
+                                                while($i<=$result4_rowcnt){
+                                                echo'<td class="tg-baqh">1</td>';
+                                                }
+                                                $index_day++;
+                                        }
                                 ?>
                             </table>
                     </div>

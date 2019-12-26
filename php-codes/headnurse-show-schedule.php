@@ -253,7 +253,7 @@ if ($personal_id == 4){
                                      $i=1;
                                      
                                      
-                                     $result2 = $db->query("SELECT COUNT(shiftIndex) as gece_shift FROM nurseschedulebyshift WHERE shiftIndex ='2' AND user_id='4'");
+                                     $result2 = $db->query("SELECT COUNT(shiftIndex) as gece_shift FROM nurseschedulebyshift WHERE sh   iftIndex ='2' AND user_id='4'");
                                      while($i<=$row_cnt){
                                         $row_cnt = $result->num_rows;
                                         $result = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id LIMIT $i");

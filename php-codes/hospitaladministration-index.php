@@ -107,6 +107,48 @@ if ($personal_id == 1){
             </div>
         </div>
         <div class="my-3 my-md-5">
+        <div class="container">
+
+<div class="row row-cards row-deck">
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="card-body d-flex flex-column">
+                  <h4><a href="hospitaladministration-index.php">Home Page</a></h4>
+                  <div class="text-muted">Go to Home Page!</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="card-body d-flex flex-column">
+                  <h4><a href="hospitaladministration-nurse-list.php">Nurse List Page</a></h4>
+                  <div class="text-muted">Show all nurses in the database</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="card-body d-flex flex-column">
+                  <h4><a href="hospitaladministration-show-schedule.php">Show Schedule Page</a></h4>
+                  <div class="text-muted">Show Selected Nurses Schedules</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="card-body d-flex flex-column">
+                  <h4><a href="hospitaladministration-report.php">Report Page</a></h4>
+                  <div class="text-muted">Show reports for Nurse Scheduling System</div>
+                </div>
+              </div>
+            </div>
+
+</div>
+          </div>
         </div>
     </div>
     <footer class="footer">

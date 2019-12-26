@@ -144,10 +144,10 @@ if(isset($_POST['Submit'])){
                   <label class="form-label" for="exampleInputEmail1">Username</label>
                   <input type="username" class="form-control" name="exampleInputUsername2" id="exampleInputUsername2" placeholder="Enter Username">
 
-                  <label class="form-label" for="exampleInputEmail1">Old password</label>
+                  <label class="form-label" style="margin-top: 10px" for="exampleInputEmail1">Old password</label>
                   <input type="password" class="form-control" name="oldpassword1" id="oldpassword1" placeholder="Enter Old Password">
 
-                  <label class="form-label" for="exampleInputEmail1">New password</label>
+                  <label class="form-label" style="margin-top: 10px" for="exampleInputEmail1">New password</label>
                   <input type="password" class="form-control" name="newpassword1" id="newpassword1" placeholder="Enter New Password">
                 </div>
                 <div class="form-footer">

@@ -37,7 +37,7 @@
     <!-- Input Mask Plugin -->
     <script src="../assets/plugins/input-mask/plugin.js"></script>
   </head>
-  <body class="">
+  <body class="" style="background-image: url('../images/mainpage_nurse.jpg')">
     <?php
       include('login.php');
         if (isset($_SESSION['login_user'])&& $_SESSION['personal_id']== 0) {
@@ -67,7 +67,7 @@
               </div>
               <form class="card" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                 <div class="card-body p-6">
-                  <div class="card-title">Login to Your NSP Account</div>
+                  <div class="card-title">Welcome to Nurse Scheduling System</div>
                   <div class="form-group">
                     <label class="form-label">Username</label>
                     <input type="username" class="form-control" name="exampleInputUsername1" id="exampleInputUsername1" placeholder="Username">

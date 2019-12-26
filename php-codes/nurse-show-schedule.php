@@ -134,6 +134,9 @@ else{
                                         if ($db->connect_errno > 0) {
                                              die('Unable to connect to database [' . $db->connect_error . ']');
                                         }
+                                            $result4 = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id");
+                                            $result4_rowcnt = $result4->num_rows;
+
                                             $i=1;                                
                                             while($i<=1){
                                                 $result = $db->query("SELECT name,surname from personal WHERE username='$username' ");
@@ -148,8 +151,10 @@ else{
                                                 $i++;
                                             }   
                                 $index_day =1;
-                                while($index_day<=7){
-                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
+                                $x1="1st Shift";
+                                $x2="2st Shift";
+                                while($index_day<=$result4_rowcnt){
+                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td> <td class="tg-baqh">'.$x1.' & '.$x2.'</td></tr>';
                                     $index_day++;
                                 }
                                 ?>

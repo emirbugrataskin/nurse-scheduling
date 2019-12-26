@@ -89,7 +89,6 @@ else{
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
             <div class="container">
                 <div class="row align-items-center">
-
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item dropdown">
@@ -101,7 +100,6 @@ else{
                             <li class="nav-item dropdown">
                                 <a href="./nurse-info.php" class="nav-link active "><i class="fe fe-check-circle"></i> My Info</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -113,10 +111,34 @@ else{
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
                             <!-- it will be data from database-->
-                <p>Total Work Days:</p>
-                <p>Total Work Hours:</p>
-                <p>Extra work by hours:</p>
-                <p>Total Annual Leave Day by Period:</p>
+                            <?php
+                                $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+                                if ($db->connect_errno > 0) {
+                                    die('Unable to connect to database [' . $db->connect_error . ']');
+                                }
+                                
+                                $result3 = $db->query("SELECT MAX(dayIndex) as tot_day FROM nurseschedulebyshift WHERE user_id='.$user_id.'");
+                                $row3 = mysqli_fetch_object($result3);
+                                $total_gun = $row3->tot_day;
+                                $result3->free();
+
+                            
+                                $result2 = $db->query("SELECT COUNT(availabilityIndex) as tot_saat FROM `nurseschedulebyhourly` WHERE user_id='.$user_id.'");
+                                $row2 = mysqli_fetch_object($result2);
+                                $total_saat = $row2->tot_saat;
+                                $result2->free();
+
+                                $result = $db->query("SELECT avail_Index FROM morethan_max_shift WHERE user_id ='.$user_id.'");
+                                $row = mysqli_fetch_object($result);
+                                $saat = $row->avail_Index;
+                                $result->free();
+
+                                echo'
+                                <p>Total Work Days: '.$total_gun.'</p>
+                                <p>Total Work Hours: '.$total_saat.'</p>
+                                <p>Extra work by hours: '.$saat.' </p>
+                                <p>Total Annual Leave Day by Period: 0</p>'
+                            ?>    
                         </div>
                     </div>
                 </div>

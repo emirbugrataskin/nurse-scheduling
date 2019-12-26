@@ -233,7 +233,7 @@ if ($personal_id == 4){
                     <div class="row align-items-center">
                         <div class="col-auto">
                             <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./documentation.html" target="_blank">Documentation</a></li>
+                                <li class="list-inline-item"><a href="https://capstone.eng.bau.edu.tr/db-active-4999.php?showDepartment=any&showCode=333" target="_blank">Documentation</a></li>
                                 <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
                             </ul>
                         </div>

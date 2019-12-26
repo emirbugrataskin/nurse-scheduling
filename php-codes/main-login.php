@@ -36,8 +36,14 @@
     <script src="../assets/plugins/maps-google/plugin.js"></script>
     <!-- Input Mask Plugin -->
     <script src="../assets/plugins/input-mask/plugin.js"></script>
+    <style>
+    .deneme
+    {
+      background-image: url('../images/mainpage_nurse.jpg');;
+    }
+    </style>
   </head>
-  <body class="" style="background-image: url('../images/mainpage_nurse.jpg')">
+  <body class="deneme">
     <?php
       include('login.php');
         if (isset($_SESSION['login_user'])&& $_SESSION['personal_id']== 0) {
@@ -57,9 +63,9 @@
           header("location: headnurse-index.php");
         }
     ?>
-    <div class="page">
-      <div class="page-single">
-        <div class="container">
+    <div class="page"> 
+      <div class="page-single" >
+        <div class="container" >
           <div class="row">
             <div class="col col-login mx-auto">
               <form class="card" action="<?= $_SERVER['PHP_SELF'] ?>" method="post">

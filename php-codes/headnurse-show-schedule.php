@@ -142,27 +142,41 @@ if ($personal_id == 4){
                                             $result2 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
                                             $row_cnt = $result2->num_rows;
                                             $personal_id  = $row['personal_id'];
-                                
-                                            while($i<=$row_cnt){
-                                                $result = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4' LIMIT $i");
-                                                $hems_isim;
-                                                $hems_soyisim;
+                                            $result4 = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id");
+                                            $result4_rowcnt = $result4->num_rows;
+
+                                            while($i<=$result4_rowcnt){
+                                                
+                                                $result = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id LIMIT $i");
+                                                
 
                                                 while($row = mysqli_fetch_object($result)){
                                                     $hems_isim = $row->name;
                                                     $hems_soyisim = $row->surname; 
                                                 }
                                                 echo '<th class="tg-baqh">'.$hems_isim.' '.$hems_soyisim.'</th>';
+                                                
                                                 $i++;
-                                            }   
-                                $index_day =1;
-                                while($index_day<=7){
-                                echo'<tr> <td class="tg-baqh">'.$index_day.'</td></tr>';
-                                    while($i<=$row_cnt){
-                                    echo'<td class="tg-baqh">1</td>';
-                                    }
-                                    $index_day++;
-                                }
+                                            }
+                                            $result3 = $db->query("SELECT DISTINCT dayIndex FROM `nurseschedulebyshift`");  
+                                            $row_count = $result3->num_rows;
+                                            $index_day =1;
+                                            $result3 = $db->query("SELECT name,surname from personal WHERE personal_id ='2' OR personal_id='3' OR personal_id='4'");
+                                            while($index_day<=$row_count){
+                                            echo'<tr> <td class="tg-baqh">'.$index_day.'</td> ';
+                                            $i1="1st Shift";
+                                            $i2="2nd Shift";
+                                            $i3=1;
+                                            while($i3<=$result4_rowcnt){
+                                                echo'<td class="tg-baqh">'.$i1.' & '.$i2.' ';
+                                                $i3++;
+                                            }
+                                            echo'</td></tr> ';
+                                                while($i<=$result4_rowcnt){
+                                                echo'<td class="tg-baqh">1</td>';
+                                                }
+                                                $index_day++;
+                                        }
                                 ?>
                             </table>
                         </div>
@@ -172,26 +186,24 @@ if ($personal_id == 4){
                 <div class="col-lg-12" style="float: left;">
                     <div class="card card-aside">
                         <div class="card-body d-flex flex-column">
+                        <?php echo'
+                                <h1>Value of Parameters</h1>
 
-                                <h1>Details about schedule</h1>
+                                <p>Number of days in the planning period: 5</p>
+                                <p>Number of nurses: 4</p>
+                                <p>Number of shifts: 2 </p>
+                                <p>Minimum number of night shift for nurses: 1</p>
+                                <p>Maximum number of night shift for nurses: 3</p>
+                                <p>Rate of assignable maximum number of night shift constraint: 1</p>
+                                <p>Rate of assignable minimum number of night shift constraint: 1</p>
+                                <p>Rate of maximum free consecutive day constraint: 1</p>
+                                <p>Rate of maximum consecutive working day constraint: 1</p>
+                                <p>Rate of working next day after worked previous day’s night shift: 1</p>
+                                <p>Rate of assigning no more than one shift in a day: 1</p>
+                                <p>Rate of assigning senior nurse to each shift for everyday: 1</p>
+                                <p>Rate of can’t working on consecutive night shifts: 1</p>'
 
-                                <p>Number of days in the planning period</p>
-                                <p>Number of nurses</p>
-                                <p>Number of shifts </p>
-                                <p>Minimum number of night shift for nurses</p>
-                                <p>Maximum number of night shift for nurses</p>
-                                <p>Rate of assignable maximum number of night shift constraint</p>
-                                <p>Rate of assignable minimum number of night shift constraint</p>
-                                <p>Rate of maximum free consecutive day constraint</p>
-                                <p>Rate of maximum consecutive working day constraint</p>
-                                <p>Rate of working next day after worked previous day’s night shift</p>
-                                <p>Rate of assigning no more than one shift in a day</p>
-                                <p>Rate of assigning senior nurse to each shift for everyday</p>
-                                <p>Rate of can’t working on consecutive night shifts</p>
-
-                                <p>Graphic Reports</p>
-
-
+                        ?>
                         </div>
                     </div>
                 </div>

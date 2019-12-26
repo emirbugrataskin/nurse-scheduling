@@ -1,6 +1,6 @@
 Sets
 i nurses /1*4/
-d days  /1*5/
+d days  /1*14/
 j shifts /1,2/
 h hours/1*24/;
 alias(d,dd);

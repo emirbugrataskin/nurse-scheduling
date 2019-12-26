@@ -1,9 +1,8 @@
 <?php
-include('headnurse-make-schedule.php');
 $myfile = fopen("parameters.inc", "w") or die("Unable to open file!");
 $txt = "Sets
 i nurses /1*4/
-d days  /1*'.$day_limit.'/
+d days  /1*14/
 j shifts /1,2/
 h hours/1*24/;
 alias(d,dd);
@@ -662,4 +661,5 @@ Table a(h,j) hour coverage of shifts
 ;";
 fwrite($myfile, $txt);
 fclose($myfile);
+include("headnurse-make-schedule.php");
 ?>

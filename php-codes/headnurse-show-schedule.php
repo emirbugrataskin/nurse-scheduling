@@ -221,73 +221,61 @@ if ($personal_id == 4){
                                 </tr>
                                 
                                 <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">Ecem Atalay</td>
                                     <td class="tg-baqh">1</td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh">Charmander Atalay</td>
+                                    <td class="tg-baqh">1</td>
+
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh">Hayriye Alp</td>
+                                    <td class="tg-baqh">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">1</td>
                                 </tr>
                             </table>
-                            <h6 style="margin-top: 20px;">Number of night shift for nurses</h6>
+
+                            <h6 style="margin-top: 20px;">Number of assigned additional shifts for each nurse and each day</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Day Number</th>
-                                </tr>
-                                <?php
-                                     $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-                                     if ($db->connect_errno > 0) {
-                                       die('Unable to connect to database [' . $db->connect_error . ']');
-                                     }
-                                     $i=1;
-                                     
-                                     
-                                     $result2 = $db->query("SELECT COUNT(shiftIndex) as gece_shift FROM nurseschedulebyshift WHERE sh   iftIndex ='2' AND user_id='4'");
-                                     while($i<=$row_cnt){
-                                        $row_cnt = $result->num_rows;
-                                        $result = $db->query("SELECT DISTINCT name,surname FROM nurseschedulebyshift INNER JOIN personal ON nurseschedulebyshift.user_id=personal.user_id LIMIT $i");
-                                     while($row = mysqli_fetch_object($result)){
-                                         $isim = $row->name;
-                                         $soyisim = $row->surname; 
-                                     }
-                                     while($row2 = mysqli_fetch_object($result2)){
-                                        $night_shift = $row2->gece_shift;
-                                     }          
-
-                                     echo'<td class="tg-baqh">'.$isim.' '.$soyisim.'</td> <td class="tg-baqh">'.$night_shift.'</td>';
-                                     $i++;
-                                    }
-                                ?>
-                                <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-
+                                    <th class="tg-baqh">Day</th>
+                                    <th class="tg-baqh">Number</th>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">Ecem Atalay</td>
                                     <td class="tg-baqh">1</td>
+                                    <td class="tg-baqh"></td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İlayda</td>
+                                    <td class="tg-baqh">Charmander Atalay</td>
                                     <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh"></td>
+
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İdris</td>
+                                    <td class="tg-baqh">Hayriye Alp</td>
                                     <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">4</td>
+                                    <td class="tg-baqh"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh"></td>
+                                    <td class="tg-baqh">5</td>
+                                    <td class="tg-baqh">NULL</td>
                                 </tr>
                             </table>
+
 
                         </div>
 
@@ -308,48 +296,57 @@ if ($personal_id == 4){
                                     <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
+                                    <td class="tg-baqh">Ecem Atalay</td>
                                     <td class="tg-baqh">0</td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Emir</td>
-                                    <td class="tg-baqh">1</td>
+                                    <td class="tg-baqh">Charmander Atalay</td>
+                                    <td class="tg-baqh">0</td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh">Hayriye Alp</td>
+                                    <td class="tg-baqh">0</td>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">0</td>
                                 </tr>
                             </table>
 
-                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and each day</h6>
+                            <h6 style="margin-top: 20px;">States maximum consecutive working day is exceeded or not for each nurse and day</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
-                                    <th class="tg-baqh">Day Number</th>
+                                    <th class="tg-baqh">Day</th>
+                                    <th class="tg-baqh">Number</th>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="tg-baqh">Emir</td>
+                                    <td class="tg-baqh">Ecem Atalay</td>
                                     <td class="tg-baqh">1</td>
+                                    <th class="tg-baqh"></th>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İlayda</td>
+                                    <td class="tg-baqh">Charmander Atalay</td>
                                     <td class="tg-baqh">2</td>
+                                    <th class="tg-baqh"></th>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İdris</td>
+                                    <td class="tg-baqh">Hayriye Alp</td>
                                     <td class="tg-baqh">3</td>
+                                    <th class="tg-baqh"></th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">4</td>
+                                    <th class="tg-baqh"></th>
+                                </tr>
+                                <tr>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">5</td>
+                                    <th class="tg-baqh"></th>
                                 </tr>
                             </table>
 
@@ -364,29 +361,29 @@ if ($personal_id == 4){
                     <div class="card card-aside">
 
                         <div class="card-body d-flex flex-column">
-                            <h6>Number of assigned additional shifts for each nurse and each day</h6>
+                        <h6 style="margin-top: 20px;">Number of night shift for nurses</h6>
                             <table class="tg">
                                 <tr>
                                     <th class="tg-c3ow">Nurse Name</th>
                                     <th class="tg-baqh">Day Number</th>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Tuğkan</td>
-                                    <td class="tg-baqh">0</td>
+                                    <td class="tg-baqh">Ecem Atalay</td>
+                                    <td class="tg-baqh">4</td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">Emir</td>
-                                    <td class="tg-baqh">1</td>
+                                    <td class="tg-baqh">Charmander Atalay</td>
+                                    <td class="tg-baqh">5</td>
 
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İlayda</td>
-                                    <td class="tg-baqh">2</td>
+                                    <td class="tg-baqh">Hayriye Alp</td>
+                                    <td class="tg-baqh">5</td>
                                 </tr>
                                 <tr>
-                                    <td class="tg-baqh">İdris</td>
-                                    <td class="tg-baqh">3</td>
+                                    <td class="tg-baqh">Ceylan Tarin</td>
+                                    <td class="tg-baqh">5</td>
                                 </tr>
                             </table>
                         </div>

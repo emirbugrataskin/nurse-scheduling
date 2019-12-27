@@ -202,10 +202,9 @@ if (isset($_POST['signup'])) {
                 <div class="col-auto ml-lg-auto">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./documentation.html" target="_blank">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
-                            </ul>
+                        <ul class="list-inline list-inline-dots mb-0">
+                            <li class="list-inline-item"><a href="https://docs.google.com/document/d/1lIVltkIwNedM9aU89IxjCY0GATJaUQ-n4St19w-2LiQ/edit?ts=5df655cf" target="_blank">Documentation</a></li>
+                        </ul>
                         </div>
 
                     </div>
